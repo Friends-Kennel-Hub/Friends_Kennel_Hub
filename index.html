@@ -436,62 +436,44 @@ We strive to make our website accessible to all. If you have trouble accessing a
 
     <!-- JavaScript for mobile menu toggle -->
    <script>
-    // JavaScript for mobile menu toggle
-  <script>
-    // JavaScript for mobile menu toggle
-   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const emailButton = document.getElementById('email-button');
     const whatsappButton = document.getElementById('whatsapp-button');
-    const contactForm = document.getElementById('contactForm');
-    const statusMessage = document.getElementById('status-message');
 
     // Email functionality
-    emailButton.addEventListener('click', (event) => {
+    emailButton.addEventListener('click', () => {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const dogBreed = document.getElementById('dog-breed').value.trim();
       const message = document.getElementById('message').value.trim();
 
-      if (name && email && dogBreed && message) {
-        const subject = encodeURIComponent('Enquiry from Friends\' Kennel Hub Website');
-        const body = encodeURIComponent(
-          `Hello Friends' Kennel Hub Team,\n\n` +
-          `I would like to inquire about the following:\n\n` +
-          `Name: ${name}\n` +
-          `Email: ${email}\n` +
-          `Desired Dog Breed: ${dogBreed}\n\n` +
-          `Message:\n${message}\n\n` +
-          `Looking forward to hearing from you.`
-        );
-        const mailtoLink = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-      } else {
-        statusMessage.textContent = 'Please fill out all fields.';
-        statusMessage.classList.add('text-red-500');
-        statusMessage.classList.remove('text-green-500');
-      }
+      const subject = encodeURIComponent('Enquiry from Friends\' Kennel Hub Website');
+      const body = encodeURIComponent(
+        `Hello Friends' Kennel Hub Team,\n\n` +
+        `I would like to inquire about the following:\n\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Desired Dog Breed: ${dogBreed}\n\n` +
+        `Message:\n${message}\n\n` +
+        `Looking forward to hearing from you.`
+      );
+      const mailtoLink = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
     });
 
     // WhatsApp functionality
-    whatsappButton.addEventListener('click', (event) => {
+    whatsappButton.addEventListener('click', () => {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const dogBreed = document.getElementById('dog-breed').value.trim();
       const message = document.getElementById('message').value.trim();
       
-      if (name && email && dogBreed && message) {
-        const whatsappMessage = encodeURIComponent(
-          `Hello! I'm ${name} and I saw your website. I'm interested in the ${dogBreed} breed. My email is ${email}. Here is my message: ${message}`
-        );
-        // Replace '1234567890' with your actual WhatsApp number, including country code but without '+' or spaces.
-        const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
-        window.open(whatsappLink, '_blank');
-      } else {
-        statusMessage.textContent = 'Please fill out all fields.';
-        statusMessage.classList.add('text-red-500');
-        statusMessage.classList.remove('text-green-500');
-      }
+      const whatsappMessage = encodeURIComponent(
+        `Hello! I'm ${name} and I saw your website. I'm interested in the ${dogBreed} breed. My email is ${email}. Here is my message: ${message}`
+      );
+      // Replace '1234567890' with your actual WhatsApp number, including country code but without '+' or spaces.
+      const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
+      window.open(whatsappLink, '_blank');
     });
   });
 </script>
