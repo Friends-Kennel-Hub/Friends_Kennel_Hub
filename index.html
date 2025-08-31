@@ -19,12 +19,35 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            color: #1f2937;
-        }
-    </style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9fafb;
+        color: #1f2937;
+    }
+    /* Add the new CSS code below this line */
+    .card-container {
+        position: relative;
+        height: 400px;
+        perspective: 1000px;
+    }
+    .card-front,
+    .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.7s;
+        backface-visibility: hidden;
+    }
+    .card-container.is-flipped .card-front {
+        transform: rotateY(180deg);
+    }
+    .card-container.is-flipped .card-back {
+        transform: rotateY(0deg);
+    }
+    .card-back {
+        transform: rotateY(180deg);
+    }
+</style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -159,157 +182,13 @@
         </section>
 
         <!-- Available Breeds Section -->
-        <section id="breeds" class="bg-white py-20 sm:py-24 rounded-3xl mx-4 sm:mx-8">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Available Breeds</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Breed Card 1 -->
-                    <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_Golden%20retriever.jpeg" alt="Golden Retriever" class="rounded-lg mb-4 w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Golden Retriever</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Family friendly, active.</li>
-                            <li><strong>Life Expectancy:</strong> 10-12 years</li>
-                            <li><strong>Height:</strong> 21-24 inches</li>
-                            <li><strong>Weight:</strong> 55-75 lbs</li>
-                        </ul>
-                    </div>
-
-                    <!-- Breed Card 2 -->
-                    <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_german%20shepherd.jpg" alt="German Shepherd" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">German Shepherd</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 3 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_labrador.jpg" alt="German Shepherd" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Labrador</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                    <!-- Breed Card 4 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_beagle.jpeg" alt="Beagle" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Beagle</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                    <!-- Breed Card 5 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_Chow-Chow.webp" alt="Chow Chow" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Chow Chow</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 6 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_saint%20berned.jpeg" alt="Saint Bernard" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Saint Bernard</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 7 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_Doberman.jpg" alt="Doberman" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Doberman</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 8 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_husky.jpeg" alt="Husky" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Husky</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 9 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_pomeranian.jpg" alt="Pomeranian" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Pomeranian</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 10 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_poodle.jpeg" alt="Poodle" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Poodle</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                     <!-- Breed Card 11 -->
-             <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_Shih%20Tzu.webp" alt="Shih Tzu" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Shih Tzu</h3>
-                        <ul class="text-gray-600 space-y-1">
-                            <li><strong>Suitability:</strong> Loyal, intelligent, protective.</li>
-                            <li><strong>Life Expectancy:</strong> 9-13 years</li>
-                            <li><strong>Height:</strong> 22-26 inches</li>
-                            <li><strong>Weight:</strong> 50-90 lbs</li>
-                        </ul>
-                    </div>
-
-                    <!-- Breed Card 12 -->
-                    <div class="bg-gray-100 p-6 rounded-3xl shadow-lg">
-                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_great%20dane.jpg" alt="Great Dane" class="w-full h-64 object-cover">
-                        <h3 class="text-2xl font-semibold mb-2">Great Dane</h3>
-                       <ul class="text-gray-600 space-y-1">
-                        <li><strong>Suitability:</strong> Gentle, friendly, patient.</li>
-                        <li><strong>Life Expectancy:</strong> 8-10 years</li>
-                        <li><strong>Height:</strong> 28-32 inches</li>
-                        <li><strong>Weight:</strong> 110-175 lbs</li>
-                    </ul>
-                    </div>
-                </div>
+       <section id="breeds" class="bg-white py-20 sm:py-24 rounded-3xl mx-4 sm:mx-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Available Breeds</h2>
+        <div id="breeds-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             </div>
-
-        </section>
+    </div>
+</section>
         
         <!-- Nutrition Advice Section -->
         <section id="nutrition" class="py-20 sm:py-24">
@@ -483,6 +362,110 @@ We strive to make our website accessible to all. If you have trouble accessing a
                 // Clear the form fields
                 contactForm.reset();
             });
+        }
+    });
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const breedsData = {
+            "Labrador Retriever": { "Main Traits": "Friendly, Active, Loyal", "Average Lifespan": "10-13 years", "Height": "21-24 inches", "Weight": "55-80 pounds", "Fun Fact": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
+            "Great Dane": { "Main Traits": "Gentle, Giant, Calm", "Average Lifespan": "7-10 years", "Height": "28-32 inches", "Weight": "110-175 pounds", "Fun Fact": "Not actually from Denmark—they originated in Germany for boar hunting." },
+            "Shih Tzu": { "Main Traits": "Affectionate, Lapdog, Friendly", "Average Lifespan": "10-16 years", "Height": "8-11 inches", "Weight": "9-16 pounds", "Fun Fact": "The name means 'little lion' in Chinese, and they were bred as companions for Chinese royalty." },
+            "Golden Retriever": { "Main Traits": "Gentle, Intelligent, Playful", "Average Lifespan": "10-12 years", "Height": "21-24 inches", "Weight": "55-75 pounds", "Fun Fact": "All Golden Retrievers can trace their ancestry back to a single dog in Scotland in the 1860s." },
+            "Doberman": { "Main Traits": "Fearless, Loyal, Energetic", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "They were called 'Devil Dogs' during WWII for their bravery in military roles." },
+            "Siberian Husky": { "Main Traits": "Energetic, Independent, Friendly", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "Famous for the 1925 'Great Race of Mercy,' delivering diphtheria serum to save Nome, Alaska." },
+            "Chow Chow": { "Main Traits": "Independent, Reserved, Dignified", "Average Lifespan": "8-12 years", "Height": "17-20 inches", "Weight": "45-70 pounds", "Fun Fact": "They are one of only two breeds with a blue-black tongue caused by extra melanin pigmentation." },
+            "Poodle": { "Main Traits": "Intelligent, Active, Proud", "Average Lifespan": "12-15 years", "Height": "10-24 inches", "Weight": "4-70 pounds", "Fun Fact": "The 'poodle clip' was originally designed by hunters to protect their joints and vital organs while swimming." },
+            "Pomeranian": { "Main Traits": "Lively, Bold, Inquisitive", "Average Lifespan": "12-16 years", "Height": "6-7 inches", "Weight": "3-7 pounds", "Fun Fact": "Queen Victoria had a small Pomeranian, which led to a decrease in their size to the popular toy size we see today." },
+            "German Shepherd": { "Main Traits": "Intelligent, Loyal, Confident", "Average Lifespan": "10-14 years", "Height": "22-26 inches", "Weight": "50-90 pounds", "Fun Fact": "First used as guide dogs for the blind after WWI, paving the way for the modern guide dog." },
+            "Beagle": { "Main Traits": "Friendly, Curious, Merry", "Average Lifespan": "10-15 years", "Height": "13-15 inches", "Weight": "20-30 pounds", "Fun Fact": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
+            "Saint Bernard": { "Main Traits": "Calm, Patient, Gentle", "Average Lifespan": "8-10 years", "Height": "26-30 inches", "Weight": "120-180 pounds", "Fun Fact": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
+        };
+
+        const breedsContainer = document.getElementById('breeds-container');
+        const flipTimers = {};
+        let activeFlipTimer = null;
+
+        const flipCard = (card) => {
+            card.classList.toggle('is-flipped');
+            if (card.classList.contains('is-flipped')) {
+                const breed = card.dataset.breed;
+                clearTimeout(flipTimers[breed]);
+                activeFlipTimer = setTimeout(() => {
+                    card.classList.remove('is-flipped');
+                    activeFlipTimer = null;
+                }, 15000);
+            } else {
+                clearTimeout(activeFlipTimer);
+                activeFlipTimer = null;
+            }
+        };
+
+        window.addEventListener('scroll', () => {
+            if (activeFlipTimer) {
+                const flippedCard = document.querySelector('.card-container.is-flipped');
+                if (flippedCard) {
+                    flippedCard.classList.remove('is-flipped');
+                    clearTimeout(activeFlipTimer);
+                    activeFlipTimer = null;
+                }
+            }
+        });
+
+        for (const breedName in breedsData) {
+            const data = breedsData[breedName];
+            const card = document.createElement('div');
+            card.className = 'card-container transition-transform duration-700 transform-style-preserve-3d';
+            card.dataset.breed = breedName;
+
+            const front = document.createElement('div');
+            front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
+            front.style.backfaceVisibility = 'hidden';
+
+            const back = document.createElement('div');
+            back.className = 'card-back p-6 bg-emerald-500 text-white rounded-3xl shadow-lg flex flex-col items-center justify-center';
+            back.style.backfaceVisibility = 'hidden';
+            back.style.transform = 'rotateY(180deg)';
+
+            const breedImage = document.createElement('img');
+            breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/resizecom_${breedName.toLowerCase().replace(/\s+/g, '')}.jpg`;
+            breedImage.alt = breedName;
+            breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+            front.appendChild(breedImage);
+
+            const breedTitle = document.createElement('h3');
+            breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
+            breedTitle.textContent = breedName;
+            front.appendChild(breedTitle);
+
+            const specsList = document.createElement('ul');
+            specsList.className = 'text-gray-600 space-y-1 text-center';
+            for (const key in data) {
+                if (key !== "Fun Fact") {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
+                    specsList.appendChild(listItem);
+                }
+            }
+            front.appendChild(specsList);
+
+            const funFact = document.createElement('p');
+            funFact.className = 'text-lg font-semibold text-center leading-relaxed';
+            funFact.textContent = data["Fun Fact"];
+            back.appendChild(funFact);
+
+            card.appendChild(front);
+            card.appendChild(back);
+            breedsContainer.appendChild(card);
+
+            card.addEventListener('click', () => {
+                flipCard(card);
+            });
+
+            flipTimers[breedName] = setTimeout(() => {
+                if (!card.classList.contains('is-flipped')) {
+                    flipCard(card);
+                }
+            }, 10000);
         }
     });
 </script>
