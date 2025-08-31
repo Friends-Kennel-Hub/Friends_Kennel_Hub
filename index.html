@@ -408,6 +408,15 @@
                 back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center';
                 back.style.backfaceVisibility = 'hidden';
                 back.style.transform = 'rotateY(180deg)';
+                 const funFactTitle = document.createElement('h4');
+funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
+funFactTitle.textContent = 'Fun Fact';
+back.appendChild(funFactTitle);
+
+const funFact = document.createElement('p');
+funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
+funFact.textContent = data["Fun Facts"];
+back.appendChild(funFact);
         
                 const breedImage = document.createElement('img');
                 breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
@@ -432,15 +441,7 @@
                 front.appendChild(specsList);
 
                 // Add the new title for the fun fact
-               const funFactTitle = document.createElement('h4');
-funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font'; // Added text-white
-funFactTitle.textContent = 'Fun Fact';
-back.appendChild(funFactTitle);
-
-const funFact = document.createElement('p');
-funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font'; // Added text-white
-funFact.textContent = data["Fun Facts"]; // Corrected the key to be plural
-back.appendChild(funFact);
+             
         
                 card.appendChild(front);
                 card.appendChild(back);
