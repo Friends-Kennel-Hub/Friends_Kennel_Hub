@@ -18,18 +18,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+  <style>
     body {
         font-family: 'Inter', sans-serif;
         background-color: #f9fafb;
         color: #1f2937;
     }
+
     /* Add the new CSS code below this line */
     .card-container {
         position: relative;
-        height: 400px;
+        min-height: 450px; /* Changed from fixed height to minimum height */
         perspective: 1000px;
     }
+
     .card-front,
     .card-back {
         position: absolute;
@@ -38,14 +40,18 @@
         transition: transform 0.7s;
         backface-visibility: hidden;
     }
+
     .card-container.is-flipped .card-front {
         transform: rotateY(180deg);
     }
+
     .card-container.is-flipped .card-back {
         transform: rotateY(0deg);
     }
+
     .card-back {
         transform: rotateY(180deg);
+        overflow-y: auto; /* This adds a scrollbar if content is too long */
     }
 </style>
 </head>
