@@ -15,20 +15,26 @@
     <!-- Favicon -->
     <link rel="icon" href="https://placehold.co/32x32/34D399/ffffff.png?text=Fk">
     <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+ <style>
     body {
         font-family: 'Inter', sans-serif;
         background-color: #f9fafb;
         color: #1f2937;
     }
 
-    /* Add the new CSS code below this line */
+    .fun-fact-font {
+        font-family: 'Playfair Display', serif;
+    }
+
     .card-container {
         position: relative;
-        min-height: 450px; /* Changed from fixed height to minimum height */
+        min-height: 450px;
         perspective: 1000px;
     }
 
@@ -51,7 +57,7 @@
 
     .card-back {
         transform: rotateY(180deg);
-        overflow-y: auto; /* This adds a scrollbar if content is too long */
+        overflow-y: auto;
     }
 </style>
 </head>
@@ -460,15 +466,15 @@ We strive to make our website accessible to all. If you have trouble accessing a
             front.appendChild(specsList);
 
             // Add the new title for the fun fact
-            const funFactTitle = document.createElement('h4');
-            funFactTitle.className = 'text-xl font-bold mb-2';
-            funFactTitle.textContent = 'Fun Fact';
-            back.appendChild(funFactTitle);
-    
-            const funFact = document.createElement('p');
-            funFact.className = 'text-base text-center leading-relaxed';
-            funFact.textContent = data["Fun Fact"];
-            back.appendChild(funFact);
+           const funFactTitle = document.createElement('h4');
+funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
+funFactTitle.textContent = 'Fun Fact';
+back.appendChild(funFactTitle);
+
+const funFact = document.createElement('p');
+funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
+funFact.textContent = data["Fun Fact"];
+back.appendChild(funFact);
     
             card.appendChild(front);
             card.appendChild(back);
@@ -483,7 +489,7 @@ We strive to make our website accessible to all. If you have trouble accessing a
                 if (!card.classList.contains('is-flipped')) {
                     flipCard(card);
                 }
-            }, 10000 + (index * 3000));
+            }, 10000 + (index * 1500));
         });
     });
 </script>
