@@ -348,18 +348,18 @@
         
             // Dog breeds card functionality
             const breedsData = {
-                "Labrador": { "image": "resizecom_labrador.jpg", "Main Traits": "Friendly, Active, Loyal", "Average Lifespan": "10-13 years", "Height": "21-24 inches", "Weight": "55-80 pounds", "Fun Fact": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
-                "Great Dane": { "image": "resizecom_great%20dane.jpg", "Main Traits": "Gentle, Giant, Calm", "Average Lifespan": "7-10 years", "Height": "28-32 inches", "Weight": "110-175 pounds", "Fun Fact": "Not actually from Denmark—they originated in Germany for boar hunting." },
-                "Shih Tzu": { "image": "resizecom_Shih%20Tzu.webp", "Main Traits": "Affectionate, Lapdog, Friendly", "Average Lifespan": "10-16 years", "Height": "8-11 inches", "Weight": "9-16 pounds", "Fun Fact": "The name means 'little lion' in Chinese, and they were bred as companions for Chinese royalty." },
-                "Golden Retriever": { "image": "resizecom_Golden%20retriever.jpeg", "Main Traits": "Gentle, Intelligent, Playful", "Average Lifespan": "10-12 years", "Height": "21-24 inches", "Weight": "55-75 pounds", "Fun Fact": "All Golden Retrievers can trace their ancestry back to a single dog in Scotland in the 1860s." },
-                "Doberman": { "image": "resizecom_Doberman.jpg", "Main Traits": "Fearless, Loyal, Energetic", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "They were called 'Devil Dogs' during WWII for their bravery in military roles." },
-                "Husky": { "image": "resizecom_husky.jpeg", "Main Traits": "Energetic, Independent, Friendly", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "Famous for the 1925 'Great Race of Mercy,' delivering diphtheria serum to save Nome, Alaska." },
-                "Chow Chow": { "image": "resizecom_Chow-Chow.webp", "Main Traits": "Independent, Reserved, Dignified", "Average Lifespan": "8-12 years", "Height": "17-20 inches", "Weight": "45-70 pounds", "Fun Fact": "They are one of only two breeds with a blue-black tongue caused by extra melanin pigmentation." },
-                "Poodle": { "image": "resizecom_poodle.jpeg", "Main Traits": "Intelligent, Active, Proud", "Average Lifespan": "12-15 years", "Height": "10-24 inches", "Weight": "4-70 pounds", "Fun Fact": "The 'poodle clip' was originally designed by hunters to protect their joints and vital organs while swimming." },
-                "Pomeranian": { "image": "resizecom_pomeranian.jpg", "Main Traits": "Lively, Bold, Inquisitive", "Average Lifespan": "12-16 years", "Height": "6-7 inches", "Weight": "3-7 pounds", "Fun Fact": "Queen Victoria had a small Pomeranian, which led to a decrease in their size to the popular toy size we see today." },
-                "German Shepherd": { "image": "resizecom_german%20shepherd.jpg", "Main Traits": "Intelligent, Loyal, Confident", "Average Lifespan": "10-14 years", "Height": "22-26 inches", "Weight": "50-90 pounds", "Fun Fact": "First used as guide dogs for the blind after WWI, paving the way for the modern guide dog." },
-                "Beagle": { "image": "resizecom_beagle.jpeg", "Main Traits": "Friendly, Curious, Merry", "Average Lifespan": "10-15 years", "Height": "13-15 inches", "Weight": "20-30 pounds", "Fun Fact": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
-                "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Main Traits": "Calm, Patient, Gentle", "Average Lifespan": "8-10 years", "Height": "26-30 inches", "Weight": "120-180 pounds", "Fun Fact": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
+                "Labrador": { "image": "resizecom_labrador.jpg", "Main Traits": "Friendly, Active, Loyal", "Average Lifespan": "10-13 years", "Height": "21-24 inches", "Weight": "55-80 pounds", "Fun Facts": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
+                "Great Dane": { "image": "resizecom_great%20dane.jpg", "Main Traits": "Gentle, Giant, Calm", "Average Lifespan": "7-10 years", "Height": "28-32 inches", "Weight": "110-175 pounds", "Fun Facts": "Not actually from Denmark—they originated in Germany for boar hunting." },
+                "Shih Tzu": { "image": "resizecom_Shih%20Tzu.webp", "Main Traits": "Affectionate, Lapdog, Friendly", "Average Lifespan": "10-16 years", "Height": "8-11 inches", "Weight": "9-16 pounds", "Fun Facts": "The name means 'little lion' in Chinese, and they were bred as companions for Chinese royalty." },
+                "Golden Retriever": { "image": "resizecom_Golden%20retriever.jpeg", "Main Traits": "Gentle, Intelligent, Playful", "Average Lifespan": "10-12 years", "Height": "21-24 inches", "Weight": "55-75 pounds", "Fun Facts": "All Golden Retrievers can trace their ancestry back to a single dog in Scotland in the 1860s." },
+                "Doberman": { "image": "resizecom_Doberman.jpg", "Main Traits": "Fearless, Loyal, Energetic", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Facts": "They were called 'Devil Dogs' during WWII for their bravery in military roles." },
+                "Husky": { "image": "resizecom_husky.jpeg", "Main Traits": "Energetic, Independent, Friendly", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Facts": "Famous for the 1925 'Great Race of Mercy,' delivering diphtheria serum to save Nome, Alaska." },
+                "Chow Chow": { "image": "resizecom_Chow-Chow.webp", "Main Traits": "Independent, Reserved, Dignified", "Average Lifespan": "8-12 years", "Height": "17-20 inches", "Weight": "45-70 pounds", "Fun Facts": "They are one of only two breeds with a blue-black tongue caused by extra melanin pigmentation." },
+                "Poodle": { "image": "resizecom_poodle.jpeg", "Main Traits": "Intelligent, Active, Proud", "Average Lifespan": "12-15 years", "Height": "10-24 inches", "Weight": "4-70 pounds", "Fun Facts": "The 'poodle clip' was originally designed by hunters to protect their joints and vital organs while swimming." },
+                "Pomeranian": { "image": "resizecom_pomeranian.jpg", "Main Traits": "Lively, Bold, Inquisitive", "Average Lifespan": "12-16 years", "Height": "6-7 inches", "Weight": "3-7 pounds", "Fun Facts": "Queen Victoria had a small Pomeranian, which led to a decrease in their size to the popular toy size we see today." },
+                "German Shepherd": { "image": "resizecom_german%20shepherd.jpg", "Main Traits": "Intelligent, Loyal, Confident", "Average Lifespan": "10-14 years", "Height": "22-26 inches", "Weight": "50-90 pounds", "Fun Facts": "First used as guide dogs for the blind after WWI, paving the way for the modern guide dog." },
+                "Beagle": { "image": "resizecom_beagle.jpeg", "Main Traits": "Friendly, Curious, Merry", "Average Lifespan": "10-15 years", "Height": "13-15 inches", "Weight": "20-30 pounds", "Fun Facts": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
+                "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Main Traits": "Calm, Patient, Gentle", "Average Lifespan": "8-10 years", "Height": "26-30 inches", "Weight": "120-180 pounds", "Fun Facts": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
             };
         
             const breedsContainer = document.getElementById('breeds-container');
@@ -432,15 +432,15 @@
                 front.appendChild(specsList);
 
                 // Add the new title for the fun fact
-                const funFactTitle = document.createElement('h4');
-                funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
-                funFactTitle.textContent = 'Fun Fact';
-                back.appendChild(funFactTitle);
-        
-                const funFact = document.createElement('p');
-                funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
-                funFact.textContent = data["Fun Facts"];
-                back.appendChild(funFact);
+               const funFactTitle = document.createElement('h4');
+funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font'; // Added text-white
+funFactTitle.textContent = 'Fun Fact';
+back.appendChild(funFactTitle);
+
+const funFact = document.createElement('p');
+funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font'; // Added text-white
+funFact.textContent = data["Fun Facts"]; // Corrected the key to be plural
+back.appendChild(funFact);
         
                 card.appendChild(front);
                 card.appendChild(back);
