@@ -327,47 +327,53 @@ We strive to make our website accessible to all. If you have trouble accessing a
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    
         // Contact form functionality
         const emailButton = document.getElementById('email-button');
         const whatsappButton = document.getElementById('whatsapp-button');
-
-        emailButton.addEventListener('click', () => {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const dogBreed = document.getElementById('dog-breed').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            const subject = encodeURIComponent('Enquiry from Friends\' Kennel Hub Website');
-            const body = encodeURIComponent(
-                `Hello Friends' Kennel Hub Team,\n\n` +
-                `I would like to inquire about the following:\n\n` +
-                `Name: ${name}\n` +
-                `Email: ${email}\n` +
-                `Desired Dog Breed: ${dogBreed}\n\n` +
-                `Message:\n${message}\n\n` +
-                `Looking forward to hearing from you.`
-            );
-            const mailtoLink = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
-        });
-
-        whatsappButton.addEventListener('click', () => {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const dogBreed = document.getElementById('dog-breed').value.trim();
-            const message = document.getElementById('message').value.trim();
-            
-            const whatsappMessage = encodeURIComponent(
-                `Hello! I'm ${name} and I saw your website. I'm interested in the ${dogBreed} breed. My email is ${email}. Here is my message: ${message}`
-            );
-            const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
-            window.open(whatsappLink, '_blank');
-        });
-
+    
+        if (emailButton) {
+            emailButton.addEventListener('click', () => {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const dogBreed = document.getElementById('dog-breed').value.trim();
+                const message = document.getElementById('message').value.trim();
+    
+                const subject = encodeURIComponent('Enquiry from Friends\' Kennel Hub Website');
+                const body = encodeURIComponent(
+                    `Hello Friends' Kennel Hub Team,\n\n` +
+                    `I would like to inquire about the following:\n\n` +
+                    `Name: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Desired Dog Breed: ${dogBreed}\n\n` +
+                    `Message:\n${message}\n\n` +
+                    `Looking forward to hearing from you.`
+                );
+                const mailtoLink = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
+                window.location.href = mailtoLink;
+            });
+        }
+    
+        if (whatsappButton) {
+            whatsappButton.addEventListener('click', () => {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const dogBreed = document.getElementById('dog-breed').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                const whatsappMessage = encodeURIComponent(
+                    `Hello! I'm ${name} and I saw your website. I'm interested in the ${dogBreed} breed. My email is ${email}. Here is my message: ${message}`
+                );
+                const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
+                window.open(whatsappLink, '_blank');
+            });
+        }
+    
         // Dog breeds card functionality
         const breedsData = {
             "Labrador": { "image": "resizecom_labrador.jpg", "Main Traits": "Friendly, Active, Loyal", "Average Lifespan": "10-13 years", "Height": "21-24 inches", "Weight": "55-80 pounds", "Fun Fact": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
@@ -383,14 +389,14 @@ We strive to make our website accessible to all. If you have trouble accessing a
             "Beagle": { "image": "resizecom_beagle.jpeg", "Main Traits": "Friendly, Curious, Merry", "Average Lifespan": "10-15 years", "Height": "13-15 inches", "Weight": "20-30 pounds", "Fun Fact": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
             "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Main Traits": "Calm, Patient, Gentle", "Average Lifespan": "8-10 years", "Height": "26-30 inches", "Weight": "120-180 pounds", "Fun Fact": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
         };
-
+    
         const breedsContainer = document.getElementById('breeds-container');
         const flipTimers = {};
         let activeFlipTimer = null;
-
+    
         const flipCard = (card) => {
-            card.classList.toggle('is-flipped');
-            if (card.classList.contains('is-flipped')) {
+            const isFlipped = card.classList.toggle('is-flipped');
+            if (isFlipped) {
                 const breed = card.dataset.breed;
                 clearTimeout(flipTimers[breed]);
                 activeFlipTimer = setTimeout(() => {
@@ -402,7 +408,7 @@ We strive to make our website accessible to all. If you have trouble accessing a
                 activeFlipTimer = null;
             }
         };
-
+    
         window.addEventListener('scroll', () => {
             if (activeFlipTimer) {
                 const flippedCard = document.querySelector('.card-container.is-flipped');
@@ -413,63 +419,72 @@ We strive to make our website accessible to all. If you have trouble accessing a
                 }
             }
         });
+    
+        // Use an array to create a staggered effect
+        const breedNames = Object.keys(breedsData);
+        breedNames.forEach((breedName, index) => {
+            const data = breedsData[breedName];
+            const card = document.createElement('div');
+            card.className = 'card-container w-full transition-transform duration-700 transform-style-preserve-3d';
+            card.dataset.breed = breedName;
+    
+            const front = document.createElement('div');
+            front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
+            front.style.backfaceVisibility = 'hidden';
+    
+            const back = document.createElement('div');
+            back.className = 'card-back p-6 bg-emerald-500 text-white rounded-3xl shadow-lg flex flex-col items-center justify-center';
+            back.style.backfaceVisibility = 'hidden';
+            back.style.transform = 'rotateY(180deg)';
+    
+            const breedImage = document.createElement('img');
+            breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
+            breedImage.alt = breedName;
+            breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+            front.appendChild(breedImage);
+    
+            const breedTitle = document.createElement('h3');
+            breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
+            breedTitle.textContent = breedName;
+            front.appendChild(breedTitle);
+    
+            const specsList = document.createElement('ul');
+            specsList.className = 'text-gray-600 space-y-1 text-center';
+            for (const key in data) {
+                if (key !== "Fun Fact" && key !== "image") {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
+                    specsList.appendChild(listItem);
+                }
+            }
+            front.appendChild(specsList);
 
-        for (const breedName in breedsData) {
-    const data = breedsData[breedName];
-    const card = document.createElement('div');
-    card.className = 'card-container w-full transition-transform duration-700 transform-style-preserve-3d';
-    card.dataset.breed = breedName;
-
-    const front = document.createElement('div');
-    front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
-    front.style.backfaceVisibility = 'hidden';
-
-    const back = document.createElement('div');
-    back.className = 'card-back p-6 bg-emerald-500 text-white rounded-3xl shadow-lg flex flex-col items-center justify-center';
-    back.style.backfaceVisibility = 'hidden';
-    back.style.transform = 'rotateY(180deg)';
-
-    const breedImage = document.createElement('img');
-    breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
-    breedImage.alt = breedName;
-    breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
-    front.appendChild(breedImage);
-
-    const breedTitle = document.createElement('h3');
-    breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
-    breedTitle.textContent = breedName;
-    front.appendChild(breedTitle);
-
-    const specsList = document.createElement('ul');
-    specsList.className = 'text-gray-600 space-y-1 text-center';
-    for (const key in data) {
-        if (key !== "Fun Fact" && key !== "image") {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
-            specsList.appendChild(listItem);
-        }
-    }
-    front.appendChild(specsList);
-
-    const funFact = document.createElement('p');
-    funFact.className = 'text-lg font-semibold text-center leading-relaxed';
-    funFact.textContent = data["Fun Fact"];
-    back.appendChild(funFact);
-
-    card.appendChild(front);
-    card.appendChild(back);
-    breedsContainer.appendChild(card);
-
-    card.addEventListener('click', () => {
-        flipCard(card);
-    });
-
-    flipTimers[breedName] = setTimeout(() => {
-        if (!card.classList.contains('is-flipped')) {
-            flipCard(card);
-        }
-    }, 10000);
-}
+            // Add the new title for the fun fact
+            const funFactTitle = document.createElement('h4');
+            funFactTitle.className = 'text-xl font-bold mb-2';
+            funFactTitle.textContent = 'Fun Fact';
+            back.appendChild(funFactTitle);
+    
+            const funFact = document.createElement('p');
+            funFact.className = 'text-base text-center leading-relaxed';
+            funFact.textContent = data["Fun Fact"];
+            back.appendChild(funFact);
+    
+            card.appendChild(front);
+            card.appendChild(back);
+            breedsContainer.appendChild(card);
+    
+            card.addEventListener('click', () => {
+                flipCard(card);
+            });
+    
+            // Staggered flip back with 3-second interval
+            flipTimers[breedName] = setTimeout(() => {
+                if (!card.classList.contains('is-flipped')) {
+                    flipCard(card);
+                }
+            }, 10000 + (index * 3000));
+        });
     });
 </script>
 </body>
