@@ -5,71 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends' Kennel Hub</title>
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Friends' Kennel Hub provides expert guidance, pet boarding, training, adoption services, and more. Find the perfect companion and get the best care for your pet.">
     <meta name="keywords" content="dog kennel, pet boarding, dog training, pet adoption, vet consultation, dog breeding, pet services, Friends' Kennel Hub">
     
-    <!-- Google Analytics Script Placeholder -->
-    <!-- Paste your Google Analytics script here to enable website tracking. -->
-    
-    <!-- Favicon -->
     <link rel="icon" href="https://placehold.co/32x32/34D399/ffffff.png?text=Fk">
-    <!-- Inter Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <!-- Tailwind CSS CDN -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
- <style>
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f9fafb;
-        color: #1f2937;
-    }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
 
-    .fun-fact-font {
-        font-family: 'Playfair Display', serif;
-    }
+        .fun-fact-font {
+            font-family: 'Playfair Display', serif;
+        }
 
-    .card-container {
-        position: relative;
-        min-height: 450px;
-        perspective: 1000px;
-    }
+        .card-container {
+            position: relative;
+            min-height: 450px;
+            perspective: 1000px;
+        }
 
-    .card-front,
-    .card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.7s;
-        backface-visibility: hidden;
-    }
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.7s;
+            backface-visibility: hidden;
+        }
 
-    .card-container.is-flipped .card-front {
-        transform: rotateY(180deg);
-    }
+        .card-container.is-flipped .card-front {
+            transform: rotateY(180deg);
+        }
 
-    .card-container.is-flipped .card-back {
-        transform: rotateY(0deg);
-    }
+        .card-container.is-flipped .card-back {
+            transform: rotateY(0deg);
+        }
 
-    .card-back {
-        transform: rotateY(180deg);
-        overflow-y: auto;
-    }
-</style>
+        .card-back {
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- Header & Navigation -->
     <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Site Name -->
             <a href="#" class="text-2xl font-bold text-emerald-500">Friends' Kennel Hub</a>
 
-            <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8">
                 <a href="about.html" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">About Us</a>
                 <a href="#services" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Services</a>
@@ -79,14 +68,12 @@
                 <a href="#contact" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Contact</a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md rounded-b-xl pb-4">
             <div class="px-2 pt-2 space-y-2">
                 <a href="about.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">About Us</a>
@@ -100,7 +87,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="bg-emerald-600 text-white py-24 sm:py-32 rounded-b-3xl">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-4">
@@ -115,12 +101,10 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Services</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card: Expert Guidance -->
                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
                         <div class="text-emerald-600 mb-4">
                             <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +117,6 @@
                         <p class="text-gray-600">Our team of experienced professionals is here to answer your questions and provide compassionate support for all your pet-related concerns.</p>
                     </div>
 
-                    <!-- Service Card: Pet Adoption -->
                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
                         <div class="text-emerald-600 mb-4">
                             <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +127,6 @@
                         <p class="text-gray-600">Give a loving home to a deserving pet. We facilitate the adoption process to connect you with your new family member.</p>
                     </div>
 
-                    <!-- Service Card: Pet Hostel -->
                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
                         <div class="text-emerald-600 mb-4">
                             <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +137,6 @@
                         <p class="text-gray-600">Our clean and safe facility provides a comfortable stay for your pets when you are away. They will receive professional care and lots of love.</p>
                     </div>
                     
-                    <!-- Service Card: Pet Training -->
                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
                         <div class="text-emerald-600 mb-4">
                             <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -166,7 +147,6 @@
                         <p class="text-gray-600">From basic obedience to advanced skills, our certified trainers use positive reinforcement to help your pet become a well-behaved companion.</p>
                     </div>
 
-                    <!-- Service Card: Stud/Breeding -->
                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
                         <div class="text-emerald-600 mb-4">
                             <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +159,6 @@
                         <p class="text-gray-600">We offer professional and ethical stud, crossing, and breeding services, ensuring the health and well-being of the animals involved.</p>
                     </div>
 
-                    <!-- Service Card: Vet Consultation -->
                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
                         <div class="text-emerald-600 mb-4">
                             <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -193,16 +172,14 @@
             </div>
         </section>
 
-        <!-- Available Breeds Section -->
-      <section id="breeds" class="bg-white py-20 sm:py-24 rounded-3xl mx-4 sm:mx-8">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Available Breeds</h2>
-        <div id="breeds-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        </div>
-    </div>
-</section>
+        <section id="breeds" class="bg-white py-20 sm:py-24 rounded-3xl mx-4 sm:mx-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Available Breeds</h2>
+                <div id="breeds-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+            </div>
+        </section>
         
-        <!-- Nutrition Advice Section -->
         <section id="nutrition" class="py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:flex lg:items-center lg:space-x-12">
@@ -222,17 +199,14 @@
             </div>
         </section>
         
-        <!-- Testimonials Section -->
         <section id="testimonials" class="bg-white py-20 sm:py-24 rounded-3xl mx-4 sm:mx-8">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Testimonial 1 -->
                     <div class="bg-gray-100 p-8 rounded-3xl shadow-lg">
                         <p class="text-gray-700 italic mb-4">"Friends' Kennel Hub took such great care of our dog. We were so worried leaving her for a week, but the regular updates and photos made us feel at ease. She came back happy and healthy!"</p>
                         <p class="font-semibold text-emerald-600">- Jane D.</p>
                     </div>
-                    <!-- Testimonial 2 -->
                     <div class="bg-gray-100 p-8 rounded-3xl shadow-lg">
                         <p class="text-gray-700 italic mb-4">"We adopted our new puppy through their service, and the entire process was seamless. They provided so much guidance on training and nutrition. We are so grateful!"</p>
                         <p class="font-semibold text-emerald-600">- Mike T.</p>
@@ -241,26 +215,22 @@
             </div>
         </section>
 
-        <!-- Blog Section -->
         <section id="blog" class="py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">From Our Blog</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Blog Post 1 -->
                     <div class="bg-white p-6 rounded-3xl shadow-lg">
                         <img src="https://placehold.co/400x250/93C5FD/ffffff?text=Training+Tips" alt="Dog training tips" class="w-full h-40 object-cover rounded-2xl mb-4">
                         <h3 class="text-xl font-semibold mb-2">5 Simple Dog Training Tips</h3>
                         <p class="text-gray-600 text-sm">Learn the basics of positive reinforcement to teach your dog new commands and behaviors.</p>
                         <a href="#" class="text-emerald-600 font-semibold mt-4 block">Read More &rarr;</a>
                     </div>
-                    <!-- Blog Post 2 -->
                     <div class="bg-white p-6 rounded-3xl shadow-lg">
                         <img src="https://placehold.co/400x250/93C5FD/ffffff?text=Healthy+Foods" alt="Healthy dog foods" class="w-full h-40 object-cover rounded-2xl mb-4">
                         <h3 class="text-xl font-semibold mb-2">Choosing the Best Food for Your Puppy</h3>
                         <p class="text-gray-600 text-sm">A guide to selecting the right nutrition to support your puppy's growth and development.</p>
                         <a href="#" class="text-emerald-600 font-semibold mt-4 block">Read More &rarr;</a>
                     </div>
-                    <!-- Blog Post 3 -->
                     <div class="bg-white p-6 rounded-3xl shadow-lg">
                         <img src="https://placehold.co/400x250/93C5FD/ffffff?text=Dog+Health" alt="Healthy dog" class="w-full h-40 object-cover rounded-2xl mb-4">
                         <h3 class="text-xl font-semibold mb-2">Common Signs of a Healthy Dog</h3>
@@ -271,53 +241,50 @@
             </div>
         </section>
 
-       <section id="contact" class="py-20 bg-gray-100 sm:py-24">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h2 class="text-3xl font-bold sm:text-4xl mb-12 text-gray-800">Get in Touch</h2>
-<div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
-<!-- Contact Details Column -->
-<div class="bg-white p-8 rounded-xl shadow-lg flex flex-col justify-center">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">Contact Us Directly</h3>
-<p class="text-gray-600 mb-2">
-Phone: +1 123-456-7890<br>
-Email: <a href="mailto:info@friendskennelhub.com" class="text-gray-800 hover:text-gray-600 transition-colors">info@friendskennelhub.com</a><br>
-Address: 123 Dogwood Lane, Canineville, USA 12345
-</p>
-<hr class="my-6 border-gray-200">
-<h3 class="text-2xl font-semibold mb-2 text-gray-800">Accessibility</h3>
-<p class="text-gray-600">
-We strive to make our website accessible to all. If you have trouble accessing any content, please contact us for assistance.
-</p>
-</div>
-<!-- Contact Form Column -->
-<div class="bg-white p-8 rounded-xl shadow-lg">
-<h3 class="text-2xl font-semibold mb-4 text-gray-800">Send Us a Message</h3>
-<form id="contact-form" class="space-y-6">
-<div>
-<input type="text" id="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200">
-</div>
-<div>
-<input type="email" id="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200">
-</div>
-<div>
-<input type="text" id="dog-breed" placeholder="Desired Dog Breed" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200">
-</div>
-<div>
-<textarea id="message" placeholder="Your Message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200"></textarea>
-</div>
-<div class="flex space-x-4">
-  <button type="button" id="email-button" class="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">Email Us</button>
-  <button type="button" id="whatsapp-button" class="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-green-500 hover:bg-green-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">WhatsApp Us</button>
-</div>
-<div id="status-message" class="mt-4 font-semibold"></div>
-</form>
-</div>
-</div>
-</div>
-</section>
+        <section id="contact" class="py-20 bg-gray-100 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold sm:text-4xl mb-12 text-gray-800">Get in Touch</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Contact Us Directly</h3>
+                        <p class="text-gray-600 mb-2">
+                            Phone: +1 123-456-7890<br>
+                            Email: <a href="mailto:info@friendskennelhub.com" class="text-gray-800 hover:text-gray-600 transition-colors">info@friendskennelhub.com</a><br>
+                            Address: 123 Dogwood Lane, Canineville, USA 12345
+                        </p>
+                        <hr class="my-6 border-gray-200">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-800">Accessibility</h3>
+                        <p class="text-gray-600">
+                            We strive to make our website accessible to all. If you have trouble accessing any content, please contact us for assistance.
+                        </p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Send Us a Message</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <input type="text" id="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200">
+                            </div>
+                            <div>
+                                <input type="email" id="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200">
+                            </div>
+                            <div>
+                                <input type="text" id="dog-breed" placeholder="Desired Dog Breed" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200">
+                            </div>
+                            <div>
+                                <textarea id="message" placeholder="Your Message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all duration-200"></textarea>
+                            </div>
+                            <div class="flex space-x-4">
+                                <button type="button" id="email-button" class="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">Email Us</button>
+                                <button type="button" id="whatsapp-button" class="w-1/2 flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-green-500 hover:bg-green-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">WhatsApp Us</button>
+                            </div>
+                            <div id="status-message" class="mt-4 font-semibold"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12 rounded-t-3xl">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="mb-4">
@@ -327,173 +294,170 @@ We strive to make our website accessible to all. If you have trouble accessing a
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu toggle -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-    
-        // Contact form functionality
-        const emailButton = document.getElementById('email-button');
-        const whatsappButton = document.getElementById('whatsapp-button');
-    
-        if (emailButton) {
-            emailButton.addEventListener('click', () => {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const dogBreed = document.getElementById('dog-breed').value.trim();
-                const message = document.getElementById('message').value.trim();
-    
-                const subject = encodeURIComponent('Enquiry from Friends\' Kennel Hub Website');
-                const body = encodeURIComponent(
-                    `Hello Friends' Kennel Hub Team,\n\n` +
-                    `I would like to inquire about the following:\n\n` +
-                    `Name: ${name}\n` +
-                    `Email: ${email}\n` +
-                    `Desired Dog Breed: ${dogBreed}\n\n` +
-                    `Message:\n${message}\n\n` +
-                    `Looking forward to hearing from you.`
-                );
-                const mailtoLink = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
-                window.location.href = mailtoLink;
-            });
-        }
-    
-        if (whatsappButton) {
-            whatsappButton.addEventListener('click', () => {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const dogBreed = document.getElementById('dog-breed').value.trim();
-                const message = document.getElementById('message').value.trim();
-                
-                const whatsappMessage = encodeURIComponent(
-                    `Hello! I'm ${name} and I saw your website. I'm interested in the ${dogBreed} breed. My email is ${email}. Here is my message: ${message}`
-                );
-                const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
-                window.open(whatsappLink, '_blank');
-            });
-        }
-    
-        // Dog breeds card functionality
-        const breedsData = {
-            "Labrador": { "image": "resizecom_labrador.jpg", "Main Traits": "Friendly, Active, Loyal", "Average Lifespan": "10-13 years", "Height": "21-24 inches", "Weight": "55-80 pounds", "Fun Fact": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
-            "Great Dane": { "image": "resizecom_great%20dane.jpg", "Main Traits": "Gentle, Giant, Calm", "Average Lifespan": "7-10 years", "Height": "28-32 inches", "Weight": "110-175 pounds", "Fun Fact": "Not actually from Denmark—they originated in Germany for boar hunting." },
-            "Shih Tzu": { "image": "resizecom_Shih%20Tzu.webp", "Main Traits": "Affectionate, Lapdog, Friendly", "Average Lifespan": "10-16 years", "Height": "8-11 inches", "Weight": "9-16 pounds", "Fun Fact": "The name means 'little lion' in Chinese, and they were bred as companions for Chinese royalty." },
-            "Golden Retriever": { "image": "resizecom_Golden%20retriever.jpeg", "Main Traits": "Gentle, Intelligent, Playful", "Average Lifespan": "10-12 years", "Height": "21-24 inches", "Weight": "55-75 pounds", "Fun Fact": "All Golden Retrievers can trace their ancestry back to a single dog in Scotland in the 1860s." },
-            "Doberman": { "image": "resizecom_Doberman.jpg", "Main Traits": "Fearless, Loyal, Energetic", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "They were called 'Devil Dogs' during WWII for their bravery in military roles." },
-            "Husky": { "image": "resizecom_husky.jpeg", "Main Traits": "Energetic, Independent, Friendly", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "Famous for the 1925 'Great Race of Mercy,' delivering diphtheria serum to save Nome, Alaska." },
-            "Chow Chow": { "image": "resizecom_Chow-Chow.webp", "Main Traits": "Independent, Reserved, Dignified", "Average Lifespan": "8-12 years", "Height": "17-20 inches", "Weight": "45-70 pounds", "Fun Fact": "They are one of only two breeds with a blue-black tongue caused by extra melanin pigmentation." },
-            "Poodle": { "image": "resizecom_poodle.jpeg", "Main Traits": "Intelligent, Active, Proud", "Average Lifespan": "12-15 years", "Height": "10-24 inches", "Weight": "4-70 pounds", "Fun Fact": "The 'poodle clip' was originally designed by hunters to protect their joints and vital organs while swimming." },
-            "Pomeranian": { "image": "resizecom_pomeranian.jpg", "Main Traits": "Lively, Bold, Inquisitive", "Average Lifespan": "12-16 years", "Height": "6-7 inches", "Weight": "3-7 pounds", "Fun Fact": "Queen Victoria had a small Pomeranian, which led to a decrease in their size to the popular toy size we see today." },
-            "German Shepherd": { "image": "resizecom_german%20shepherd.jpg", "Main Traits": "Intelligent, Loyal, Confident", "Average Lifespan": "10-14 years", "Height": "22-26 inches", "Weight": "50-90 pounds", "Fun Fact": "First used as guide dogs for the blind after WWI, paving the way for the modern guide dog." },
-            "Beagle": { "image": "resizecom_beagle.jpeg", "Main Traits": "Friendly, Curious, Merry", "Average Lifespan": "10-15 years", "Height": "13-15 inches", "Weight": "20-30 pounds", "Fun Fact": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
-            "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Main Traits": "Calm, Patient, Gentle", "Average Lifespan": "8-10 years", "Height": "26-30 inches", "Weight": "120-180 pounds", "Fun Fact": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
-        };
-    
-        const breedsContainer = document.getElementById('breeds-container');
-        const flipTimers = {};
-        let activeFlipTimer = null;
-    
-        const flipCard = (card) => {
-            const isFlipped = card.classList.toggle('is-flipped');
-            if (isFlipped) {
-                const breed = card.dataset.breed;
-                clearTimeout(flipTimers[breed]);
-                activeFlipTimer = setTimeout(() => {
-                    card.classList.remove('is-flipped');
-                    activeFlipTimer = null;
-                }, 15000);
-            } else {
-                clearTimeout(activeFlipTimer);
-                activeFlipTimer = null;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
-        };
-    
-        window.addEventListener('scroll', () => {
-            if (activeFlipTimer) {
-                const flippedCard = document.querySelector('.card-container.is-flipped');
-                if (flippedCard) {
-                    flippedCard.classList.remove('is-flipped');
+        
+            // Contact form functionality
+            const emailButton = document.getElementById('email-button');
+            const whatsappButton = document.getElementById('whatsapp-button');
+        
+            if (emailButton) {
+                emailButton.addEventListener('click', () => {
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const dogBreed = document.getElementById('dog-breed').value.trim();
+                    const message = document.getElementById('message').value.trim();
+        
+                    const subject = encodeURIComponent('Enquiry from Friends\' Kennel Hub Website');
+                    const body = encodeURIComponent(
+                        `Hello Friends' Kennel Hub Team,\n\n` +
+                        `I would like to inquire about the following:\n\n` +
+                        `Name: ${name}\n` +
+                        `Email: ${email}\n` +
+                        `Desired Dog Breed: ${dogBreed}\n\n` +
+                        `Message:\n${message}\n\n` +
+                        `Looking forward to hearing from you.`
+                    );
+                    const mailtoLink = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
+                    window.location.href = mailtoLink;
+                });
+            }
+        
+            if (whatsappButton) {
+                whatsappButton.addEventListener('click', () => {
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const dogBreed = document.getElementById('dog-breed').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    const whatsappMessage = encodeURIComponent(
+                        `Hello! I'm ${name} and I saw your website. I'm interested in the ${dogBreed} breed. My email is ${email}. Here is my message: ${message}`
+                    );
+                    const whatsappLink = `https://wa.me/1234567890?text=${whatsappMessage}`;
+                    window.open(whatsappLink, '_blank');
+                });
+            }
+        
+            // Dog breeds card functionality
+            const breedsData = {
+                "Labrador": { "image": "resizecom_labrador.jpg", "Main Traits": "Friendly, Active, Loyal", "Average Lifespan": "10-13 years", "Height": "21-24 inches", "Weight": "55-80 pounds", "Fun Fact": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
+                "Great Dane": { "image": "resizecom_great%20dane.jpg", "Main Traits": "Gentle, Giant, Calm", "Average Lifespan": "7-10 years", "Height": "28-32 inches", "Weight": "110-175 pounds", "Fun Fact": "Not actually from Denmark—they originated in Germany for boar hunting." },
+                "Shih Tzu": { "image": "resizecom_Shih%20Tzu.webp", "Main Traits": "Affectionate, Lapdog, Friendly", "Average Lifespan": "10-16 years", "Height": "8-11 inches", "Weight": "9-16 pounds", "Fun Fact": "The name means 'little lion' in Chinese, and they were bred as companions for Chinese royalty." },
+                "Golden Retriever": { "image": "resizecom_Golden%20retriever.jpeg", "Main Traits": "Gentle, Intelligent, Playful", "Average Lifespan": "10-12 years", "Height": "21-24 inches", "Weight": "55-75 pounds", "Fun Fact": "All Golden Retrievers can trace their ancestry back to a single dog in Scotland in the 1860s." },
+                "Doberman": { "image": "resizecom_Doberman.jpg", "Main Traits": "Fearless, Loyal, Energetic", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "They were called 'Devil Dogs' during WWII for their bravery in military roles." },
+                "Husky": { "image": "resizecom_husky.jpeg", "Main Traits": "Energetic, Independent, Friendly", "Average Lifespan": "12-14 years", "Height": "20-23 inches", "Weight": "35-60 pounds", "Fun Fact": "Famous for the 1925 'Great Race of Mercy,' delivering diphtheria serum to save Nome, Alaska." },
+                "Chow Chow": { "image": "resizecom_Chow-Chow.webp", "Main Traits": "Independent, Reserved, Dignified", "Average Lifespan": "8-12 years", "Height": "17-20 inches", "Weight": "45-70 pounds", "Fun Fact": "They are one of only two breeds with a blue-black tongue caused by extra melanin pigmentation." },
+                "Poodle": { "image": "resizecom_poodle.jpeg", "Main Traits": "Intelligent, Active, Proud", "Average Lifespan": "12-15 years", "Height": "10-24 inches", "Weight": "4-70 pounds", "Fun Fact": "The 'poodle clip' was originally designed by hunters to protect their joints and vital organs while swimming." },
+                "Pomeranian": { "image": "resizecom_pomeranian.jpg", "Main Traits": "Lively, Bold, Inquisitive", "Average Lifespan": "12-16 years", "Height": "6-7 inches", "Weight": "3-7 pounds", "Fun Fact": "Queen Victoria had a small Pomeranian, which led to a decrease in their size to the popular toy size we see today." },
+                "German Shepherd": { "image": "resizecom_german%20shepherd.jpg", "Main Traits": "Intelligent, Loyal, Confident", "Average Lifespan": "10-14 years", "Height": "22-26 inches", "Weight": "50-90 pounds", "Fun Fact": "First used as guide dogs for the blind after WWI, paving the way for the modern guide dog." },
+                "Beagle": { "image": "resizecom_beagle.jpeg", "Main Traits": "Friendly, Curious, Merry", "Average Lifespan": "10-15 years", "Height": "13-15 inches", "Weight": "20-30 pounds", "Fun Fact": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
+                "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Main Traits": "Calm, Patient, Gentle", "Average Lifespan": "8-10 years", "Height": "26-30 inches", "Weight": "120-180 pounds", "Fun Fact": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
+            };
+        
+            const breedsContainer = document.getElementById('breeds-container');
+            const flipTimers = {};
+            let activeFlipTimer = null;
+        
+            const flipCard = (card) => {
+                const isFlipped = card.classList.toggle('is-flipped');
+                if (isFlipped) {
+                    const breed = card.dataset.breed;
+                    clearTimeout(flipTimers[breed]);
+                    activeFlipTimer = setTimeout(() => {
+                        card.classList.remove('is-flipped');
+                        activeFlipTimer = null;
+                    }, 15000);
+                } else {
                     clearTimeout(activeFlipTimer);
                     activeFlipTimer = null;
                 }
-            }
-        });
-    
-        // Use an array to create a staggered effect
-        const breedNames = Object.keys(breedsData);
-        breedNames.forEach((breedName, index) => {
-            const data = breedsData[breedName];
-            const card = document.createElement('div');
-            card.className = 'card-container w-full transition-transform duration-700 transform-style-preserve-3d';
-            card.dataset.breed = breedName;
-    
-            const front = document.createElement('div');
-            front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
-            front.style.backfaceVisibility = 'hidden';
-    
-            const back = document.createElement('div');
-            back.className = 'card-back p-6 bg-emerald-500 text-white rounded-3xl shadow-lg flex flex-col items-center justify-center';
-            back.style.backfaceVisibility = 'hidden';
-            back.style.transform = 'rotateY(180deg)';
-    
-            const breedImage = document.createElement('img');
-            breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
-            breedImage.alt = breedName;
-            breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
-            front.appendChild(breedImage);
-    
-            const breedTitle = document.createElement('h3');
-            breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
-            breedTitle.textContent = breedName;
-            front.appendChild(breedTitle);
-    
-            const specsList = document.createElement('ul');
-            specsList.className = 'text-gray-600 space-y-1 text-center';
-            for (const key in data) {
-                if (key !== "Fun Fact" && key !== "image") {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
-                    specsList.appendChild(listItem);
+            };
+        
+            window.addEventListener('scroll', () => {
+                if (activeFlipTimer) {
+                    const flippedCard = document.querySelector('.card-container.is-flipped');
+                    if (flippedCard) {
+                        flippedCard.classList.remove('is-flipped');
+                        clearTimeout(activeFlipTimer);
+                        activeFlipTimer = null;
+                    }
                 }
-            }
-            front.appendChild(specsList);
-
-            // Add the new title for the fun fact
-          const funFactTitle = document.createElement('h4');
-funFactTitle.className = 'text-xl font-bold mb-2 fun-fact-font';
-funFactTitle.style.color = '#fff'; // Explicitly set the text color to white
-funFactTitle.textContent = 'Fun Fact';
-back.appendChild(funFactTitle);
-
-const funFact = document.createElement('p');
-funFact.className = 'text-base text-center leading-relaxed fun-fact-font';
-funFact.style.color = '#fff'; // Explicitly set the text color to white
-funFact.textContent = data["Fun Fact"];
-back.appendChild(funFact);
-    
-            card.appendChild(front);
-            card.appendChild(back);
-            breedsContainer.appendChild(card);
-    
-            card.addEventListener('click', () => {
-                flipCard(card);
             });
-    
-            // Staggered flip back with 3-second interval
-            flipTimers[breedName] = setTimeout(() => {
-                if (!card.classList.contains('is-flipped')) {
-                    flipCard(card);
+        
+            // Use an array to create a staggered effect
+            const breedNames = Object.keys(breedsData);
+            breedNames.forEach((breedName, index) => {
+                const data = breedsData[breedName];
+                const card = document.createElement('div');
+                card.className = 'card-container w-full transition-transform duration-700 transform-style-preserve-3d';
+                card.dataset.breed = breedName;
+        
+                const front = document.createElement('div');
+                front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
+                front.style.backfaceVisibility = 'hidden';
+        
+                const back = document.createElement('div');
+                back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center';
+                back.style.backfaceVisibility = 'hidden';
+                back.style.transform = 'rotateY(180deg)';
+        
+                const breedImage = document.createElement('img');
+                breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
+                breedImage.alt = breedName;
+                breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+                front.appendChild(breedImage);
+        
+                const breedTitle = document.createElement('h3');
+                breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
+                breedTitle.textContent = breedName;
+                front.appendChild(breedTitle);
+        
+                const specsList = document.createElement('ul');
+                specsList.className = 'text-gray-600 space-y-1 text-center';
+                for (const key in data) {
+                    if (key !== "Fun Fact" && key !== "image") {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
+                        specsList.appendChild(listItem);
+                    }
                 }
-            }, 10000 + (index * 1500));
+                front.appendChild(specsList);
+
+                // Add the new title for the fun fact
+                const funFactTitle = document.createElement('h4');
+                funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
+                funFactTitle.textContent = 'Fun Fact';
+                back.appendChild(funFactTitle);
+        
+                const funFact = document.createElement('p');
+                funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
+                funFact.textContent = data["Fun Fact"];
+                back.appendChild(funFact);
+        
+                card.appendChild(front);
+                card.appendChild(back);
+                breedsContainer.appendChild(card);
+        
+                card.addEventListener('click', () => {
+                    flipCard(card);
+                });
+        
+                // Staggered flip back with 1.5-second interval
+                flipTimers[breedName] = setTimeout(() => {
+                    if (!card.classList.contains('is-flipped')) {
+                        flipCard(card);
+                    }
+                }, 10000 + (index * 1500));
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
