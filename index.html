@@ -466,13 +466,15 @@ We strive to make our website accessible to all. If you have trouble accessing a
             front.appendChild(specsList);
 
             // Add the new title for the fun fact
-           const funFactTitle = document.createElement('h4');
-funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
+          const funFactTitle = document.createElement('h4');
+funFactTitle.className = 'text-xl font-bold mb-2 fun-fact-font';
+funFactTitle.style.color = '#fff'; // Explicitly set the text color to white
 funFactTitle.textContent = 'Fun Fact';
 back.appendChild(funFactTitle);
 
 const funFact = document.createElement('p');
-funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
+funFact.className = 'text-base text-center leading-relaxed fun-fact-font';
+funFact.style.color = '#fff'; // Explicitly set the text color to white
 funFact.textContent = data["Fun Fact"];
 back.appendChild(funFact);
     
