@@ -405,10 +405,9 @@
                 front.style.backfaceVisibility = 'hidden';
         
                 const back = document.createElement('div');
-                back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center';
-                back.style.backfaceVisibility = 'hidden';
-                back.style.transform = 'rotateY(180deg)';
-                 const funFactTitle = document.createElement('h4');
+back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center';
+
+const funFactTitle = document.createElement('h4');
 funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
 funFactTitle.textContent = 'Fun Fact';
 back.appendChild(funFactTitle);
@@ -417,6 +416,15 @@ const funFact = document.createElement('p');
 funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
 funFact.textContent = data["Fun Facts"];
 back.appendChild(funFact);
+
+const breedImage = document.createElement('img');
+breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
+breedImage.alt = breedName;
+breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+back.appendChild(breedImage);
+
+card.appendChild(front);
+card.appendChild(back);
         
                 const breedImage = document.createElement('img');
                 breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
