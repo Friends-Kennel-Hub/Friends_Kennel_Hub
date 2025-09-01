@@ -363,68 +363,100 @@
             };
         
             const breedsContainer = document.getElementById('breeds-container');
-            const flipTimers = {};
-            let activeFlipTimer = null;
-        
-            const flipCard = (card) => {
-                const isFlipped = card.classList.toggle('is-flipped');
-                if (isFlipped) {
-                    const breed = card.dataset.breed;
-                    clearTimeout(flipTimers[breed]);
-                    activeFlipTimer = setTimeout(() => {
-                        card.classList.remove('is-flipped');
-                        activeFlipTimer = null;
-                    }, 15000);
-                } else {
-                    clearTimeout(activeFlipTimer);
-                    activeFlipTimer = null;
-                }
-            };
-        
-            window.addEventListener('scroll', () => {
-                if (activeFlipTimer) {
-                    const flippedCard = document.querySelector('.card-container.is-flipped');
-                    if (flippedCard) {
-                        flippedCard.classList.remove('is-flipped');
-                        clearTimeout(activeFlipTimer);
-                        activeFlipTimer = null;
-                    }
-                }
-            });
-        
-            // Use an array to create a staggered effect
-            const breedNames = Object.keys(breedsData);
-            breedNames.forEach((breedName, index) => {
-                const data = breedsData[breedName];
-                const card = document.createElement('div');
-                card.className = 'card-container w-full transition-transform duration-700 transform-style-preserve-3d';
-                card.dataset.breed = breedName;
-        
-                const front = document.createElement('div');
-                front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
-                front.style.backfaceVisibility = 'hidden';
-        
-                const back = document.createElement('div');
-back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center';
+const flipTimers = {};
+let activeFlipTimer = null;
 
-const funFactTitle = document.createElement('h4');
-funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
-funFactTitle.textContent = 'Fun Fact';
-back.appendChild(funFactTitle);
+const flipCard = (card) => {
+    const isFlipped = card.classList.toggle('is-flipped');
+    if (isFlipped) {
+        const breed = card.dataset.breed;
+        clearTimeout(flipTimers[breed]);
+        activeFlipTimer = setTimeout(() => {
+            card.classList.remove('is-flipped');
+            activeFlipTimer = null;
+        }, 15000);
+    } else {
+        clearTimeout(activeFlipTimer);
+        activeFlipTimer = null;
+    }
+};
 
-const funFact = document.createElement('p');
-funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
-funFact.textContent = data["Fun Facts"];
-back.appendChild(funFact);
+window.addEventListener('scroll', () => {
+    if (activeFlipTimer) {
+        const flippedCard = document.querySelector('.card-container.is-flipped');
+        if (flippedCard) {
+            flippedCard.classList.remove('is-flipped');
+            clearTimeout(activeFlipTimer);
+            activeFlipTimer = null;
+        }
+    }
+});
 
-const breedImage = document.createElement('img');
-breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
-breedImage.alt = breedName;
-breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
-back.appendChild(breedImage);
+const breedNames = Object.keys(breedsData);
+breedNames.forEach((breedName, index) => {
+    const data = breedsData[breedName];
+    const card = document.createElement('div');
+    card.className = 'card-container w-full transition-transform duration-700 transform-style-preserve-3d';
+    card.dataset.breed = breedName;
 
-card.appendChild(front);
-card.appendChild(back);
+    // --- Start of Card Front ---
+    const front = document.createElement('div');
+    front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
+    front.style.backfaceVisibility = 'hidden';
+    
+    const breedImageFront = document.createElement('img');
+    breedImageFront.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
+    breedImageFront.alt = breedName;
+    breedImageFront.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+    front.appendChild(breedImageFront);
+    
+    const breedTitle = document.createElement('h3');
+    breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
+    breedTitle.textContent = breedName;
+    front.appendChild(breedTitle);
+
+    const specsList = document.createElement('ul');
+    specsList.className = 'text-gray-600 space-y-1 text-center';
+    Object.entries(data).forEach(([key, value]) => {
+        if (key !== "image" && key !== "Fun Facts") {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${key}: ${value}`;
+            specsList.appendChild(listItem);
+        }
+    });
+    front.appendChild(specsList);
+    // --- End of Card Front ---
+
+    // --- Start of Card Back ---
+    const back = document.createElement('div');
+    back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center';
+
+    const funFactTitle = document.createElement('h4');
+    funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
+    funFactTitle.textContent = 'Fun Fact';
+    back.appendChild(funFactTitle);
+
+    const funFact = document.createElement('p');
+    funFact.className = 'text-base text-center leading-relaxed text-white fun-fact-font';
+    funFact.textContent = data["Fun Facts"];
+    back.appendChild(funFact);
+
+    const breedImageBack = document.createElement('img');
+    breedImageBack.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
+    breedImageBack.alt = breedName;
+    breedImageBack.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+    back.appendChild(breedImageBack);
+    // --- End of Card Back ---
+
+    // --- Append Front and Back to Card Container ---
+    card.appendChild(front);
+    card.appendChild(back);
+    breedsContainer.appendChild(card);
+    
+    card.addEventListener('click', () => {
+        flipCard(card);
+    });
+});
         
                 const breedImage = document.createElement('img');
                 breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
