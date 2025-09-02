@@ -4,44 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Friends' Kennel Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="description" content="Learn about the mission, values, and the dedicated team behind Friends' Kennel Hub.">
+    <link rel="icon" href="https://placehold.co/32x32/34D399/ffffff.png?text=Fk">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50 text-gray-900">
 
-   <header class="bg-emerald-500 text-white shadow-lg">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-        <a href="index.html" class="text-2xl font-bold">Friends' Kennel Hub</a>
-        <div class="hidden md:flex space-x-8">
-            <a href="about.html" class="text-white hover:text-gray-200 font-medium transition-colors">About Us</a>
-            <a href="services.html" class="text-white hover:text-gray-200 font-medium transition-colors">Services</a>
-            <a href="breeds.html" class="text-white hover:text-gray-200 font-medium transition-colors">Breeds</a>
-            <a href="testimonials.html" class="text-white hover:text-gray-200 font-medium transition-colors">Testimonials</a>
-            <a href="blog.html" class="text-white hover:text-gray-200 font-medium transition-colors">Blog</a>
-            <a href="contact.html" class="text-white hover:text-gray-200 font-medium transition-colors">Contact</a>
+    <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-emerald-500">Friends' Kennel Hub</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="about.html" class="text-emerald-600 hover:text-emerald-600 font-medium transition-colors">About Us</a>
+                <a href="index.html#services" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Services</a>
+                <a href="index.html#breeds" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Breeds</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md rounded-b-xl pb-4">
+            <div class="px-2 pt-2 space-y-2">
+                <a href="about.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">About Us</a>
+                <a href="index.html#services" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Services</a>
+                <a href="index.html#breeds" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Breeds</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Contact</a>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-    <main class="container mx-auto py-10 px-6">
-        <section class="bg-white p-8 rounded-lg shadow-md">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">About Friends' Kennel Hub</h1>
-            <p class="text-lg text-gray-700 mb-4">Welcome to **Friends' Kennel Hub**! We are a passionate community dedicated to connecting dog lovers with comprehensive care, resources, and companionship for their beloved pets. Our mission is to foster a healthy, happy, and informed environment for every canine friend.</p>
-            <p class="text-lg text-gray-700 mb-4">Founded in **[Year, e.g., 2020]**, our journey began with a simple belief: every dog deserves a loving home and access to the best possible care. We strive to be your go-to source for everything canine, from expert advice on breeds and training to heartwarming stories and local events.</p>
-            <ul class="list-disc list-inside text-lg text-gray-700">
-                <li>**Educate** owners on responsible pet care.</li>
-                <li>**Connect** families with reputable breeders and adoption agencies.</li>
-                <li>**Promote** animal welfare and ethical treatment.</li>
-                <li>**Build** a supportive community for dog enthusiasts.</li>
-            </ul>
-            <p class="text-lg text-gray-700 mt-4">Join us in our mission to celebrate the unique bond between humans and their canine companions! 🐶</p>
+    <main>
+        <section id="about-hero" class="bg-emerald-600 text-white py-20 sm:py-28 rounded-b-3xl">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">About Our Kennel</h1>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto mt-4">Dedicated to the health, happiness, and well-being of every dog that comes through our doors.</p>
+            </div>
+        </section>
+
+        <section id="our-story" class="py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:flex lg:items-center lg:space-x-12">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">Our Story</h2>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Friends' Kennel Hub was founded from a simple, yet powerful love for dogs. It all started with a small group of friends who shared a passion for animal welfare and saw a need for a caring, professional, and reliable pet service center in our community. We wanted to create a place that felt like a second home for pets and a trusted resource for their owners.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Today, we've grown into a full-service hub offering everything from expert breeding advice to safe boarding and positive reinforcement training. Our core mission remains the same: to ensure every dog is treated with the love, respect, and expertise they deserve.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 mt-10 lg:mt-0">
+                        <img src="https://placehold.co/600x450/34D399/ffffff?text=Our+Team" alt="Our Team at Friends' Kennel Hub" class="rounded-3xl shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="bg-white py-20 sm:py-24 rounded-3xl mx-4 sm:mx-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Why Choose Us?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-xl font-semibold mb-2">Passionate Experts</h3>
+                        <p class="text-gray-600">Our team is composed of certified trainers, experienced handlers, and lifelong dog lovers.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-xl font-semibold mb-2">Safety First</h3>
+                        <p class="text-gray-600">We maintain the highest standards of cleanliness and safety in all our facilities and services.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-xl font-semibold mb-2">Ethical Practices</h3>
+                        <p class="text-gray-600">We are committed to ethical breeding, positive training methods, and responsible pet ownership.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <footer class="bg-gray-800 text-white text-center py-6 mt-10">
-        <div class="container mx-auto">
-            <p>&copy; 2023 Friends' Kennel Hub. All rights reserved.</p>
+
+    <footer class="bg-gray-900 text-gray-300 py-12 rounded-t-3xl">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Friends' Kennel Hub. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            }
+        });
+    </script>
 </body>
 </html>
