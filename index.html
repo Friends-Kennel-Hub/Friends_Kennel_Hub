@@ -458,38 +458,6 @@ breedNames.forEach((breedName, index) => {
     });
 });
         
-                const breedImage = document.createElement('img');
-                breedImage.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
-                breedImage.alt = breedName;
-                breedImage.className = 'w-full h-64 object-cover rounded-2xl mb-4';
-                front.appendChild(breedImage);
-        
-                const breedTitle = document.createElement('h3');
-                breedTitle.className = 'text-2xl font-semibold mb-2 text-gray-800 text-center';
-                breedTitle.textContent = breedName;
-                front.appendChild(breedTitle);
-        
-                const specsList = document.createElement('ul');
-                specsList.className = 'text-gray-600 space-y-1 text-center';
-                for (const key in data) {
-                    if (key !== "Fun Fact" && key !== "image") {
-                        const listItem = document.createElement('li');
-                        listItem.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
-                        specsList.appendChild(listItem);
-                    }
-                }
-                front.appendChild(specsList);
-
-                // Add the new title for the fun fact
-             
-        
-                card.appendChild(front);
-                card.appendChild(back);
-                breedsContainer.appendChild(card);
-        
-                card.addEventListener('click', () => {
-                    flipCard(card);
-                });
         
                 // Staggered flip back with 1.5-second interval
                 flipTimers[breedName] = setTimeout(() => {
