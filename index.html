@@ -57,21 +57,15 @@
 
     <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-emerald-500">Friends' Kennel Hub</a>
-
+            <a href="index.html" class="text-2xl font-bold text-emerald-500">Friends' Kennel Hub</a>
             <div class="hidden md:flex space-x-8">
                 <a href="about.html" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">About Us</a>
                 <a href="#services" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Services</a>
                 <a href="#breeds" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Breeds</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Testimonials</a>
-                <a href="#blog" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Blog</a>
                 <a href="#contact" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Contact</a>
             </div>
-
             <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md rounded-b-xl pb-4">
@@ -79,30 +73,31 @@
                 <a href="about.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">About Us</a>
                 <a href="#services" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Services</a>
                 <a href="#breeds" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Breeds</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Testimonials</a>
-                <a href="#blog" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Blog</a>
                 <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Contact</a>
             </div>
         </div>
     </header>
 
     <main>
+        <section class="bg-emerald-600 text-white py-24 sm:py-32 rounded-b-3xl">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-4">
+                    Your Pet's Home Away From Home.
+                </h1>
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto mb-8 opacity-90">
+                    Friends' Kennel Hub is your trusted partner for all your pet care needs. From expert guidance to a loving pet hostel, we've got you covered.
+                </p>
+                <a href="#contact" class="inline-block bg-white text-emerald-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-all transform hover:scale-105">
+                    Contact Us Today
+                </a>
+            </div>
+        </section>
+
         <section id="services" class="py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
-                        <h3 class="text-xl font-semibold mb-2">Pet Training</h3>
-                        <p class="text-gray-600">From basic obedience to advanced skills, our certified trainers use positive reinforcement to help your pet become a well-behaved companion.</p>
-                    </div>
-                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
-                        <h3 class="text-xl font-semibold mb-2">Stud & Breeding Services</h3>
-                        <p class="text-gray-600">We offer professional and ethical stud, crossing, and breeding services, ensuring the health and well-being of the animals involved.</p>
-                    </div>
-                     <div class="bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105">
-                        <h3 class="text-xl font-semibold mb-2">Vet Consultation</h3>
-                        <p class="text-gray-600">Access to on-site or virtual vet consultations for general health checks and advice, ensuring your pet stays healthy and happy.</p>
-                    </div>
+                <div id="services-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Services will be dynamically inserted here -->
                 </div>
             </div>
         </section>
@@ -111,34 +106,41 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Available Breeds</h2>
                 <div id="breeds-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    </div>
+                    <!-- Breeds will be dynamically inserted here -->
+                </div>
             </div>
         </section>
-        
-        <section id="nutrition" class="py-20 sm:py-24">
-             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                 <div class="lg:flex lg:items-center lg:space-x-12">
-                     <div class="lg:w-1/2">
-                         <img src="https://placehold.co/600x400/10B981/ffffff?text=Pet+Nutrition" alt="Pet Nutrition" class="rounded-3xl shadow-xl w-full">
-                     </div>
-                     <div class="lg:w-1/2 mt-10 lg:mt-0">
-                         <h2 class="text-3xl sm:text-4xl font-bold mb-6">Nutrition Advice</h2>
-                         <p class="text-gray-700 leading-relaxed">Proper nutrition can prevent common health issues, improve coat health, and boost energy levels. Let us guide you in making the best dietary choices.</p>
-                     </div>
-                 </div>
-             </div>
+
+        <section id="contact" class="py-20 bg-gray-100 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold sm:text-4xl mb-12 text-gray-800">Get in Touch</h2>
+                <div class="max-w-xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-lg">
+                    <form id="contact-form" class="space-y-6 text-left">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200">
+                        </div>
+                        <div>
+                            <label for="service-inquiry" class="block text-sm font-medium text-gray-700 mb-1">Service <span class="text-red-500">*</span></label>
+                            <select id="service-inquiry" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200">
+                                <option value="" disabled selected>-- Select a Service --</option>
+                                <!-- Service options will be dynamically inserted here -->
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200"></textarea>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <button type="button" id="email-button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">Email Us</button>
+                            <button type="button" id="whatsapp-button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-green-500 hover:bg-green-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">WhatsApp Us</button>
+                        </div>
+                        <div id="status-message" class="mt-4 font-semibold text-center"></div>
+                    </form>
+                </div>
+            </div>
         </section>
-
     </main>
-    <!-- ... other sections end here ... -->
-    </main>
-
-    <!-- PASTE THE NEW CONTACT FORM CODE RIGHT HERE -->
-
-    <footer class="bg-gray-900 text-gray-300 py-12 rounded-t-3xl">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Friends' Kennel Hub. All Rights Reserved.</p>
-<!-- ... rest of the file ... -->
 
     <footer class="bg-gray-900 text-gray-300 py-12 rounded-t-3xl">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -147,73 +149,190 @@
     </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton) {
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            }
+            
+            // --- DATA ---
+            const servicesData = [
+                { 
+                    name: "Expert Guidance & Support", 
+                    description: "Our team of experienced professionals is here to answer your questions and provide compassionate support for all your pet-related concerns.",
+                    icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`
+                },
+                { 
+                    name: "Pet Adoption", 
+                    description: "Give a loving home to a deserving pet. We facilitate the adoption process to connect you with your new family member.",
+                    icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>`
+                },
+                { 
+                    name: "Pet Boarding / Hostel", 
+                    description: "Our clean and safe facility provides a comfortable stay for your pets when you are away. They will receive professional care and lots of love.",
+                    icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>`
+                },
+                { 
+                    name: "Pet Training", 
+                    description: "From basic obedience to advanced skills, our certified trainers use positive reinforcement to help your pet become a well-behaved companion.",
+                    icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>`
+                },
+                { 
+                    name: "Stud & Breeding Services", 
+                    description: "We offer professional and ethical stud, crossing, and breeding services, ensuring the health and well-being of the animals involved.",
+                    icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>`
+                },
+                { 
+                    name: "Vet Consultation", 
+                    description: "Access to on-site or virtual vet consultations for general health checks and advice, ensuring your pet stays healthy and happy.",
+                    icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>`
+                }
+            ];
 
-        // Dog breeds card functionality
-        const breedsData = {
-            "Labrador": { "image": "resizecom_labrador.jpg", "Main Traits": "Friendly, Active, Loyal", "Fun Facts": "Can carry eggs in their mouths without breaking them due to their 'soft mouth' trait." },
-            "Great Dane": { "image": "resizecom_great%20dane.jpg", "Main Traits": "Gentle, Giant, Calm", "Fun Facts": "Not actually from Denmark—they originated in Germany for boar hunting." },
-            "Shih Tzu": { "image": "resizecom_Shih%20Tzu.webp", "Main Traits": "Affectionate, Lapdog, Friendly", "Fun Facts": "The name means 'little lion' in Chinese, and they were bred as companions for Chinese royalty." },
-            "Golden Retriever": { "image": "resizecom_Golden%20retriever.jpeg", "Main Traits": "Gentle, Intelligent, Playful", "Fun Facts": "All Golden Retrievers can trace their ancestry back to a single dog in Scotland in the 1860s." },
-            "Doberman": { "image": "resizecom_Doberman.jpg", "Main Traits": "Fearless, Loyal, Energetic", "Fun Facts": "They were called 'Devil Dogs' during WWII for their bravery in military roles." },
-            "Husky": { "image": "resizecom_husky.jpeg", "Main Traits": "Energetic, Independent, Friendly", "Fun Facts": "Famous for the 1925 'Great Race of Mercy,' delivering diphtheria serum to save Nome, Alaska." },
-            "Chow Chow": { "image": "resizecom_Chow-Chow.webp", "Main Traits": "Independent, Reserved, Dignified", "Fun Facts": "They are one of only two breeds with a blue-black tongue caused by extra melanin pigmentation." },
-            "Poodle": { "image": "resizecom_poodle.jpeg", "Main Traits": "Intelligent, Active, Proud", "Fun Facts": "The 'poodle clip' was originally designed by hunters to protect their joints and vital organs while swimming." },
-            "Pomeranian": { "image": "resizecom_pomeranian.jpg", "Main Traits": "Lively, Bold, Inquisitive", "Fun Facts": "Queen Victoria had a small Pomeranian, which led to a decrease in their size to the popular toy size we see today." },
-            "German Shepherd": { "image": "resizecom_german%20shepherd.jpg", "Main Traits": "Intelligent, Loyal, Confident", "Fun Facts": "First used as guide dogs for the blind after WWI, paving the way for the modern guide dog." },
-            "Beagle": { "image": "resizecom_beagle.jpeg", "Main Traits": "Friendly, Curious, Merry", "Fun Facts": "Their name may come from the French word 'begueule,' meaning 'gaping throat,' referring to their baying." },
-            "Saint Bernard": { "image": "resizecom_saint%20bernard.jpg", "Main Traits": "Calm, Patient, Gentle", "Fun Facts": "They are famous for rescuing travelers in the snowy Alps, often with a small barrel of brandy tied to their neck." }
-        };
-    
-        const breedsContainer = document.getElementById('breeds-container');
-        if (breedsContainer) {
-            Object.entries(breedsData).forEach(([breedName, data]) => {
-                const card = document.createElement('div');
-                card.className = 'card-container w-full';
-                card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+            const breedsData = {
+                "Labrador": { "image": "resizecom_labrador.jpg", "Major Trait": "Friendly & Active", "Lifespan": "10-13 years", "Height": "21-24 in", "Weight": "55-80 lbs", "Care Needs": "Needs daily exercise and regular grooming.", "Fun Facts": "Their 'soft mouth' allows them to carry things gently." },
+                "Great Dane": { "image": "resizecom_great%20dane.jpg", "Major Trait": "Gentle Giant", "Lifespan": "7-10 years", "Height": "28-32 in", "Weight": "110-175 lbs", "Care Needs": "Monitor for bloat; needs joint support.", "Fun Facts": "Despite the name, this breed is German, not Danish." },
+                "Shih Tzu": { "image": "resizecom_Shih%20Tzu.webp", "Major Trait": "Affectionate Lapdog", "Lifespan": "10-16 years", "Height": "8-11 in", "Weight": "9-16 lbs", "Care Needs": "Daily grooming and regular eye cleaning are essential.", "Fun Facts": "Their name means 'little lion' in Chinese." },
+                "Golden Retriever": { "image": "resizecom_Golden%20retriever.jpeg", "Major Trait": "Intelligent & Gentle", "Lifespan": "10-12 years", "Height": "21-24 in", "Weight": "55-75 lbs", "Care Needs": "High energy; requires daily walks and playtime.", "Fun Facts": "Descended from a single dog in 1860s Scotland." },
+                "Doberman": { "image": "resizecom_Doberman.jpg", "Major Trait": "Loyal & Fearless", "Lifespan": "10-13 years", "Height": "24-28 in", "Weight": "60-100 lbs", "Care Needs": "Requires strong leadership and socialization.", "Fun Facts": "They were called 'Devil Dogs' in WWII for their bravery." },
+                "Husky": { "image": "resizecom_husky.jpeg", "Major Trait": "Energetic & Independent", "Lifespan": "12-15 years", "Height": "20-23 in", "Weight": "35-60 lbs", "Care Needs": "Not for hot climates; loves to run.", "Fun Facts": "Famous for the 1925 Alaskan serum run." },
+                "Chow Chow": { "image": "resizecom_Chow-Chow.webp", "Major Trait": "Dignified & Reserved", "Lifespan": "8-12 years", "Height": "17-20 in", "Weight": "45-70 lbs", "Care Needs": "Can be stubborn; needs early socialization.", "Fun Facts": "One of two breeds with a blue-black tongue." },
+                "Poodle": { "image": "resizecom_poodle.jpeg", "Major Trait": "Highly Intelligent", "Lifespan": "12-15 years", "Height": "10-24 in", "Weight": "4-70 lbs", "Care Needs": "Coat requires professional grooming.", "Fun Facts": "Their haircut was designed for swimming protection." },
+                "Pomeranian": { "image": "resizecom_pomeranian.jpg", "Major Trait": "Lively & Bold", "Lifespan": "12-16 years", "Height": "6-7 in", "Weight": "3-7 lbs", "Care Needs": "Prone to dental issues; requires regular brushing.", "Fun Facts": "Popularized by Queen Victoria." },
+                "German Shepherd": { "image": "resizecom_german%20shepherd.jpg", "Major Trait": "Confident & Courageous", "Lifespan": "9-13 years", "Height": "22-26 in", "Weight": "50-90 lbs", "Care Needs": "Prone to hip dysplasia; needs training.", "Fun Facts": "First guide dogs for the blind were German Shepherds." },
+                "Beagle": { "image": "resizecom_beagle.jpeg", "Major Trait": "Curious & Merry", "Lifespan": "10-15 years", "Height": "13-15 in", "Weight": "20-30 lbs", "Care Needs": "Follows scents; needs a secure yard.", "Fun Facts": "Their name may mean 'gaping throat' in French." },
+                "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Major Trait": "Patient & Calm", "Lifespan": "8-10 years", "Height": "26-30 in", "Weight": "120-180 lbs", "Care Needs": "Drools a lot and sheds heavily.", "Fun Facts": "Famous for rescuing travelers in the Alps." }
+            };
 
-                // Card Front
-                const front = document.createElement('div');
-                front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-center';
+            // --- RENDER FUNCTIONS ---
+            function renderServices() {
+                const container = document.getElementById('services-list');
+                const dropdown = document.getElementById('service-inquiry');
+                if (!container || !dropdown) return;
                 
-                const imgFront = document.createElement('img');
-                imgFront.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
-                imgFront.alt = breedName;
-                imgFront.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+                servicesData.forEach(service => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105';
+                    card.innerHTML = `${service.icon}<h3 class="text-xl font-semibold mb-2">${service.name}</h3><p class="text-gray-600">${service.description}</p>`;
+                    container.appendChild(card);
+
+                    const option = document.createElement('option');
+                    option.value = service.name;
+                    option.textContent = service.name;
+                    dropdown.appendChild(option);
+                });
+            }
+
+            function renderBreeds() {
+                const container = document.getElementById('breeds-container');
+                if (!container) return;
+
+                Object.entries(breedsData).forEach(([breedName, data]) => {
+                    const card = document.createElement('div');
+                    card.className = 'card-container w-full';
+                    card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+
+                    // Card Front
+                    const front = document.createElement('div');
+                    front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center';
+                    
+                    const imgFront = document.createElement('img');
+                    imgFront.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
+                    imgFront.alt = breedName;
+                    imgFront.className = 'w-full h-64 object-cover rounded-2xl mb-4';
+                    
+                    const title = document.createElement('h3');
+                    title.className = 'text-2xl font-semibold text-gray-800 text-center mb-3';
+                    title.textContent = breedName;
+                    
+                    const specsList = document.createElement('ul');
+                    specsList.className = 'text-gray-600 space-y-1 text-center text-sm';
+                    ['Major Trait', 'Lifespan', 'Height', 'Weight', 'Care Needs'].forEach(key => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
+                        specsList.appendChild(li);
+                    });
+                    
+                    front.append(imgFront, title, specsList);
+
+                    // Card Back
+                    const back = document.createElement('div');
+                    back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center text-center';
+
+                    const funFact = document.createElement('p');
+                    funFact.className = 'text-lg italic leading-relaxed text-white fun-fact-font';
+                    funFact.textContent = data["Fun Facts"];
+
+                    back.append(funFact);
+                    
+                    card.append(front, back);
+                    container.appendChild(card);
+                });
+            }
+
+            // --- CONTACT FORM LOGIC ---
+            function handleContactForm() {
+                const emailButton = document.getElementById('email-button');
+                const whatsappButton = document.getElementById('whatsapp-button');
+                const statusMessage = document.getElementById('status-message');
+
+                const getFormData = () => {
+                    const name = document.getElementById('name').value.trim();
+                    const service = document.getElementById('service-inquiry').value;
+                    const message = document.getElementById('message').value.trim();
+                    return { name, service, message };
+                };
+
+                const validateForm = (data) => {
+                    if (!data.service) {
+                        statusMessage.textContent = 'Please select a service.';
+                        statusMessage.className = 'mt-4 font-semibold text-center text-red-500';
+                        return false;
+                    }
+                    statusMessage.textContent = '';
+                    return true;
+                };
                 
-                const title = document.createElement('h3');
-                title.className = 'text-2xl font-semibold text-gray-800 text-center';
-                title.textContent = breedName;
-                
-                front.append(imgFront, title);
+                if (emailButton) {
+                    emailButton.addEventListener('click', () => {
+                        const data = getFormData();
+                        if (!validateForm(data)) return;
 
-                // Card Back
-                const back = document.createElement('div');
-                back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center text-center';
+                        const subject = encodeURIComponent(`Inquiry about ${data.service}`);
+                        const body = encodeURIComponent(
+                            `Hello Friends' Kennel Hub,\n\n` +
+                            `I'm inquiring about the following service: ${data.service}\n\n` +
+                            (data.name ? `Name: ${data.name}\n` : '') +
+                            (data.message ? `Message:\n${data.message}\n\n` : '\n') +
+                            `Thank you.`
+                        );
+                        window.location.href = `mailto:info@friendskennelhub.com?subject=${subject}&body=${body}`;
+                    });
+                }
 
-                const funFactTitle = document.createElement('h4');
-                funFactTitle.className = 'text-xl font-bold mb-2 text-white fun-fact-font';
-                funFactTitle.textContent = 'Fun Fact';
+                if (whatsappButton) {
+                    whatsappButton.addEventListener('click', () => {
+                        const data = getFormData();
+                        if (!validateForm(data)) return;
 
-                const funFact = document.createElement('p');
-                funFact.className = 'text-base leading-relaxed text-white fun-fact-font';
-                funFact.textContent = data["Fun Facts"];
+                        let text = `Hello! I'm inquiring about your "${data.service}" service.`;
+                        if (data.name) text += ` My name is ${data.name}.`;
+                        if (data.message) text += `\n\nMy message: ${data.message}`;
 
-                back.append(funFactTitle, funFact);
-                
-                card.append(front, back);
-                breedsContainer.appendChild(card);
-            });
-        }
-    });
+                        const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(text)}`;
+                        window.open(whatsappLink, '_blank');
+                    });
+                }
+            }
+
+            // --- INITIALIZE PAGE ---
+            renderServices();
+            renderBreeds();
+            handleContactForm();
+        });
     </script>
 </body>
 </html>
+
