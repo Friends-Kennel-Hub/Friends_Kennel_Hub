@@ -248,7 +248,7 @@
                     title.textContent = breedName;
                     
                     const specsList = document.createElement('ul');
-                    specsList.className = 'text-gray-600 space-y-1 text-center text-sm';
+                    specsList.className = 'text-gray-600 space-y-1 text-left text-sm w-full px-4';
                     ['Major Trait', 'Lifespan', 'Height', 'Weight', 'Care Needs'].forEach(key => {
                         const li = document.createElement('li');
                         li.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
@@ -335,5 +335,4 @@
     </script>
 </body>
 </html>
-
 
