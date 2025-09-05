@@ -239,11 +239,34 @@
                 "Beagle": { "image": "resizecom_beagle.jpeg", "Major Trait": "Curious & Merry", "Lifespan": "10-15 years", "Height": "13-15 in", "Weight": "20-30 lbs", "Care Needs": "Follows scents; needs a secure yard.", "Fun Facts": "Their name may mean 'gaping throat' in French." },
                 "Saint Bernard": { "image": "resizecom_saint%20berned.jpeg", "Major Trait": "Patient & Calm", "Lifespan": "8-10 years", "Height": "26-30 in", "Weight": "120-180 lbs", "Care Needs": "Drools a lot and sheds heavily.", "Fun Facts": "Famous for rescuing travelers in the Alps." }
             };
-            const blogData = [
+           const blogData = [
                 { title: "Monsoon Care for Pups", summary: "A guide to keeping your dog safe, healthy, and happy during the rainy season.", image: "https://placehold.co/800x400/93C5FD/ffffff?text=Happy+Dog+Indoors", link: "blog-post-1.html" },
-                { title: "The Ultimate New Puppy Checklist", summary: "Everything you need to prepare for your new furry family member's arrival.", image: "https://placehold.co/800x400/A78BFA/ffffff?text=New+Puppy+Essentials", link: "#" },
-                { title: "Solving Separation Anxiety", summary: "Tips and tricks to help your dog feel more comfortable when they're home alone.", image: "https://placehold.co/800x400/F472B6/ffffff?text=Calm+Dog+Alone", link: "#" }
+                { title: "The Ultimate New Puppy Checklist", summary: "Everything you need to prepare for your new furry family member's arrival.", image: "https://placehold.co/800x400/A78BFA/ffffff?text=New+Puppy+Essentials", link: "blog-post-2.html" },
+                { title: "Solving Separation Anxiety", summary: "Tips and tricks to help your dog feel more comfortable when they're home alone.", image: "https://placehold.co/800x400/F472B6/ffffff?text=Calm+Dog+Alone", link: "blog-post-3.html" }
             ];
+            
+            function renderBlog(showAll = false) {
+                const container = document.getElementById('blog-posts-container');
+                if (container) {
+                    container.innerHTML = '';
+                    const postsToShow = showAll ? blogData : blogData.slice(0, 3);
+                    postsToShow.forEach(post => {
+                        const postEl = document.createElement('div');
+                        postEl.className = 'bg-white rounded-3xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 unique-blog-frame';
+                        postEl.innerHTML = `
+                            <a href="${post.link}">
+                                <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">${post.title}</h3>
+                                    <p class="text-gray-600 text-sm mb-4">${post.summary}</p>
+                                    <span class="font-semibold text-emerald-600">Read More &rarr;</span>
+                                </div>
+                            </a>
+                        `;
+                        container.appendChild(postEl);
+                    });
+                }
+            }
             const faqData = [
                 { question: "What vaccinations should my puppy have before coming home?", answer: "Puppies typically start core vaccinations at 6-8 weeks, with boosters every 2-4 weeks until 16+ weeks of age. Core vaccines include distemper, hepatitis/adenovirus, parvovirus, and rabies. A veterinary health certificate should accompany your puppy." },
                 { question: "When should my puppy be spayed/neutered?", answer: "Timing depends on breed size: small breeds at 5-6 months, medium breeds at 6-9 months, large breeds at 12-15 months, and giant breeds at 15-18 months. Early spaying/neutering in large breeds may increase risks of certain health issues." },
