@@ -60,6 +60,24 @@
         .unique-blog-frame:hover {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
+
+        /* --- STYLES FOR FAQ ACCORDION --- */
+        .faq-answer {
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px; /* Adjust as needed */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-item .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -134,6 +152,16 @@
             </div>
         </section>
 
+        <!-- === NEW FAQ SECTION === -->
+        <section id="faq" class="py-20 sm:py-24 bg-white rounded-3xl mx-4 sm:mx-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+                <div id="faq-container" class="max-w-3xl mx-auto space-y-4">
+                    <!-- FAQ items will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="py-20 bg-gray-100 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-bold sm:text-4xl mb-12 text-gray-800">Get in Touch</h2>
@@ -178,16 +206,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            console.log("Friend's Kennel Hub Script Initializing...");
-
             // Mobile menu toggle
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenuButton) {
                 mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
             }
-            
-            // --- DATA ---
+
+            // --- ALL DATA ---
             const servicesData = [
                 { name: "Expert Guidance & Support", description: "Our team of experienced professionals is here to answer your questions and provide compassionate support for all your pet-related concerns.", icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`},
                 { name: "Pet Adoption", description: "Give a loving home to a deserving pet. We facilitate the adoption process to connect you with your new family member.", icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>`},
@@ -214,6 +240,13 @@
                 { title: "Monsoon Care for Pups", summary: "A guide to keeping your dog safe, healthy, and happy during the rainy season.", image: "https://placehold.co/800x400/93C5FD/ffffff?text=Happy+Dog+Indoors", link: "blog-post-1.html" },
                 { title: "The Ultimate New Puppy Checklist", summary: "Everything you need to prepare for your new furry family member's arrival.", image: "https://placehold.co/800x400/A78BFA/ffffff?text=New+Puppy+Essentials", link: "#" },
                 { title: "Solving Separation Anxiety", summary: "Tips and tricks to help your dog feel more comfortable when they're home alone.", image: "https://placehold.co/800x400/F472B6/ffffff?text=Calm+Dog+Alone", link: "#" }
+            ];
+            const faqData = [
+                { question: "What should I feed my puppy?", answer: "Feed high-quality puppy food appropriate for your dog's expected adult size (small, medium, large breed formulas). Gradually transition over 7-10 days if changing brands. Choose foods with high-quality protein sources and avoid those with excessive fillers." },
+                { question: "How often should I take my dog to the veterinarian?", answer: "Puppies need visits every 3-4 weeks until 16 weeks old. Adult dogs should have annual wellness exams, while senior dogs (7+ years) benefit from bi-annual checkups. Emergency visits are needed for sudden illness or injury." },
+                { question: "What are the signs of a medical emergency in dogs?", answer: "Seek immediate veterinary care for difficulty breathing, bloating, seizures, loss of consciousness, severe vomiting or diarrhea, inability to urinate, suspected poisoning, or extreme lethargy." },
+                { question: "When should I start training my puppy?", answer: "Training can begin as early as 7-8 weeks. Puppy socialization classes are essential. Early training establishes good habits and prevents behavioral problems from developing." },
+                { question: "How much exercise does my puppy need?", answer: "The general rule is 5 minutes of exercise per month of age, twice daily for puppies. Avoid excessive exercise like long runs until growth plates close (12-18 months). Mental stimulation through puzzle toys is equally important." }
             ];
 
             // --- RENDER FUNCTIONS ---
@@ -292,6 +325,30 @@
                     });
                 }
             }
+             function renderFAQ() {
+                const container = document.getElementById('faq-container');
+                if (!container) return;
+
+                faqData.forEach(item => {
+                    const faqItem = document.createElement('div');
+                    faqItem.className = 'faq-item border-b border-gray-200 pb-4';
+                    
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'faq-question flex justify-between items-center cursor-pointer py-2';
+                    questionDiv.innerHTML = `
+                        <h3 class="font-semibold text-lg text-gray-800">${item.question}</h3>
+                        <span class="faq-icon text-emerald-500 font-bold text-2xl">+</span>
+                    `;
+                    
+                    const answerDiv = document.createElement('div');
+                    answerDiv.className = 'faq-answer px-2 text-gray-600 text-left';
+                    answerDiv.innerHTML = `<p>${item.answer}</p>`;
+                    
+                    faqItem.appendChild(questionDiv);
+                    faqItem.appendChild(answerDiv);
+                    container.appendChild(faqItem);
+                });
+            }
 
             function handleContactForm() {
                 const emailButton = document.getElementById('email-button');
@@ -332,13 +389,29 @@
                 }
             }
 
+            function handleFAQInteractions() {
+                const faqContainer = document.getElementById('faq-container');
+                if (faqContainer) {
+                    faqContainer.addEventListener('click', (e) => {
+                        const question = e.target.closest('.faq-question');
+                        if (question) {
+                            const faqItem = question.parentElement;
+                            faqItem.classList.toggle('open');
+                        }
+                    });
+                }
+            }
+
             // --- INITIALIZE PAGE ---
             renderServices();
             renderBreeds();
-            renderBlog(false); // This line makes the blog posts appear on the home page
+            renderBlog(false);
+            renderFAQ();
             handleContactForm();
+            handleFAQInteractions();
         });
     </script>
 </body>
 </html>
+
 
