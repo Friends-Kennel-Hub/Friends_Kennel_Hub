@@ -12,6 +12,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f9fafb; color: #1f2937; }
+
+        /* --- NEW STYLES FOR UNIQUE BLOG FRAMES --- */
+        .unique-blog-frame {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+            transition: clip-path 0.3s ease-in-out;
+        }
+        .unique-blog-frame:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -66,9 +75,17 @@
             if (mobileMenuButton) {
                 mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
             }
-            // This is the crucial new line. It tells the script to render ALL blog posts on this page.
+            
+            // Render all blog posts
             renderBlog(true); 
+
+            // Apply the unique frame style to the newly created blog posts
+            const blogPosts = document.querySelectorAll('#blog-posts-container > div');
+            blogPosts.forEach(post => {
+                post.classList.add('unique-blog-frame');
+            });
         });
     </script>
 </body>
 </html>
+
