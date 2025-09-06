@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Friends' Kennel Hub</title>
-    <meta name="description" content="Learn about the mission, values, and the dedicated team behind Friends' Kennel Hub.">
+    
+    <!-- === SEO META TAGS FOR ABOUT US PAGE === -->
+    <title>About Friends' Kennel Hub | Our Story and Mission</title>
+    <meta name="description" content="Learn about the mission and values of Friends' Kennel Hub. We are a passionate community dedicated to connecting dog lovers with comprehensive care and resources.">
+    <meta name="keywords" content="about us, dog kennel story, pet care mission, professional dog handlers, ethical breeding">
+    
     <link rel="icon" href="https://placehold.co/32x32/34D399/ffffff.png?text=Fk">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +19,40 @@
             font-family: 'Inter', sans-serif;
             background-color: #f9fafb;
             color: #1f2937;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
-        main {
-            flex-grow: 1;
+        
+        /* --- STYLES FOR WAVY DIVIDERS --- */
+        .wavy-divider-top {
+            position: relative;
         }
+        .wavy-divider-top::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2310B981' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,133.3C672,117,768,139,864,165.3C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: cover;
+            transform: scaleY(-1);
+        }
+
+        .wavy-divider-bottom {
+            position: relative;
+        }
+        .wavy-divider-bottom::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f9fafb' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,133.3C672,117,768,139,864,165.3C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -30,10 +61,11 @@
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold text-emerald-500">Friends' Kennel Hub</a>
             <div class="hidden md:flex space-x-8">
-                <a href="about.html" class="text-emerald-600 hover:text-emerald-600 font-medium transition-colors">About Us</a>
-                <a href="index.html#services" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Services</a>
-                <a href="index.html#breeds" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Breeds</a>
-                <a href="index.html#contact" class="text-gray-600 hover:text-emerald-600 font-medium transition-colors">Contact</a>
+                <a href="about.html" class="text-emerald-600 font-bold">About Us</a>
+                <a href="index.html#services" class="text-gray-600 hover:text-emerald-600 font-medium">Services</a>
+                <a href="index.html#breeds" class="text-gray-600 hover:text-emerald-600 font-medium">Breeds</a>
+                <a href="blog.html" class="text-gray-600 hover:text-emerald-600 font-medium">Blog</a>
+                <a href="index.html#contact" class="text-gray-600 hover:text-emerald-600 font-medium">Contact</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -41,23 +73,24 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md rounded-b-xl pb-4">
             <div class="px-2 pt-2 space-y-2">
-                <a href="about.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">About Us</a>
-                <a href="index.html#services" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Services</a>
-                <a href="index.html#breeds" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Breeds</a>
-                <a href="index.html#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Contact</a>
+                <a href="about.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100">About Us</a>
+                <a href="index.html#services" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100">Services</a>
+                <a href="index.html#breeds" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100">Breeds</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100">Blog</a>
+                <a href="index.html#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100">Contact</a>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="about-hero" class="bg-emerald-600 text-white py-20 sm:py-28 rounded-b-3xl">
+        <section class="bg-emerald-600 text-white pt-24 pb-28 wavy-divider-bottom">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">About Our Kennel</h1>
                 <p class="text-lg sm:text-xl max-w-3xl mx-auto mt-4">Dedicated to the health, happiness, and well-being of every dog that comes through our doors.</p>
             </div>
         </section>
 
-        <section id="our-story" class="py-20 sm:py-24">
+        <section class="py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="lg:flex lg:items-center lg:space-x-12">
                     <div class="lg:w-1/2">
@@ -75,22 +108,22 @@
                 </div>
             </div>
         </section>
-
-        <section id="why-us" class="py-20 sm:py-24">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Why Choose Us?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-xl font-semibold mb-2">Passionate Experts</h3>
-                        <p class="text-gray-600">Our team is composed of certified trainers, experienced handlers, and lifelong dog lovers.</p>
+        
+        <section class="bg-white py-20 sm:py-24 wavy-divider-top wavy-divider-bottom">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">Why Choose Us?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg text-center">
+                        <h3 class="font-semibold text-xl mb-2">Expertise</h3>
+                        <p class="text-gray-600">Our team is composed of certified trainers, experienced handlers, and passionate veterinary professionals.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-xl font-semibold mb-2">Safety First</h3>
-                        <p class="text-gray-600">We maintain the highest standards of cleanliness and safety in all our facilities and services.</p>
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg text-center">
+                        <h3 class="font-semibold text-xl mb-2">Ethical Standards</h3>
+                        <p class="text-gray-600">We are committed to the highest standards of animal welfare in all our services, from breeding to boarding.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-xl font-semibold mb-2">Ethical Practices</h3>
-                        <p class="text-gray-600">We are committed to ethical breeding, positive training methods, and responsible pet ownership.</p>
+                    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg text-center">
+                        <h3 class="font-semibold text-xl mb-2">Community</h3>
+                        <p class="text-gray-600">We're more than a business; we're a hub for dog lovers to connect, learn, and share their passion.</p>
                     </div>
                 </div>
             </div>
@@ -108,10 +141,14 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
             }
         });
     </script>
+
 </body>
 </html>
+
 
