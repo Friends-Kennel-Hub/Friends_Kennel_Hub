@@ -11,52 +11,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .blog-content h3 { font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
-        .blog-content p { margin-bottom: 1rem; line-height: 1.75; color: #374151; }
-        .blog-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: #374151;}
-        .blog-content li { margin-bottom: 0.5rem; }
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .blog-content h3 { font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+    .blog-content p { margin-bottom: 1rem; line-height: 1.75; color: #374151; }
+    .blog-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: #374151;}
+    .blog-content li { margin-bottom: 0.5rem; }
 
-        /* Custom CSS for floating images */
-        .float-image-right {
-            float: right;
-            margin-left: 1.5rem; /* Space between text and image */
-            margin-bottom: 1rem; /* Space below image */
-            width: 40%; /* Adjust width as needed */
-            max-width: 300px; /* Optional: limit max width */
-            border-radius: 0.75rem; /* rounded-xl equivalent */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md equivalent */
-        }
-        .float-image-left {
-            float: left;
-            margin-right: 1.5rem;
-            margin-bottom: 1rem;
-            width: 40%;
-            max-width: 300px;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        /* Clearfix for sections with floated images to ensure subsequent content doesn't wrap */
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
+    /* Custom CSS for floating images */
+    .float-image-right {
+        float: right;
+        margin-left: 1.5rem; 
+        margin-bottom: 1rem;
+        width: 40%;
+        max-width: 300px;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .float-image-left {
+        float: left;
+        margin-right: 1.5rem;
+        margin-bottom: 1rem;
+        width: 40%;
+        max-width: 300px;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    /* This makes sure content below doesn't get messed up */
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-        /* Responsive adjustments for floated images */
-        @media (max-width: 768px) {
-            .float-image-right, .float-image-left {
-                float: none; /* Disable float on smaller screens */
-                width: 100%; /* Make them full width again */
-                margin-left: 0;
-                margin-right: 0;
-                margin-top: 1.5rem; /* Add some space above when stacked */
-                margin-bottom: 1.5rem;
-                max-width: 100%;
-            }
+    /* This makes the images stack on top on mobile phones */
+    @media (max-width: 768px) {
+        .float-image-right, .float-image-left {
+            float: none;
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 100%;
         }
-    </style>
+    }
+</style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -107,14 +107,17 @@
                     </ul>
                 </div>
 
-                <h3>2. Beat the Itch: Coat Care</h3>
-                <img src="https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/towel%20drying%20dogs.jpg" alt="Towel drying a dog" class="w-2/3 md:w-1/2 mx-auto rounded-xl shadow-md my-6"> <p>A damp coat is not just uncomfortable; it can lead to nasty skin infections and that persistent "wet dog" smell.</p>
-                <p><strong>What to do:</strong></p>
-                <ul>
-                    <li><strong>Thorough Drying:</strong> Every time your dog gets wet, towel-dry them thoroughly. For dogs with thicker coats, a quick once-over with a hairdryer on a low-heat setting can make a huge difference.</li>
-                    <li><strong>Regular Brushing:</strong> Brushing helps to remove loose fur and dirt, improves air circulation to the skin, and prevents matting, which can trap moisture.</li>
-                    <li><strong>Avoid Over-Bathing:</strong> While it might seem counterintuitive, too much bathing can strip the natural oils from their coat, making them more susceptible to skin issues. Stick to their regular bathing schedule unless they get excessively dirty.</li>
-                </ul>
+               <div class="clearfix">
+    <img src="https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/towel%20drying%20dogs.jpg" alt="Towel drying a dog" class="float-image-left">
+    <h3>2. Beat the Itch: Coat Care</h3>
+    <p>A damp coat is not just uncomfortable; it can lead to nasty skin infections and that persistent "wet dog" smell.</p>
+    <p><strong>What to do:</strong></p>
+    <ul>
+        <li><strong>Thorough Drying:</strong> Every time your dog gets wet, towel-dry them thoroughly. For dogs with thicker coats, a quick once-over with a hairdryer on a low-heat setting can make a huge difference.</li>
+        <li><strong>Regular Brushing:</strong> Brushing helps to remove loose fur and dirt, improves air circulation to the skin, and prevents matting, which can trap moisture.</li>
+        <li><strong>Avoid Over-Bathing:</strong> While it might seem counterintuitive, too much bathing can strip the natural oils from their coat, making them more susceptible to skin issues. Stick to their regular bathing schedule unless they get excessively dirty.</li>
+    </ul>
+</div>
 
                 <div class="clearfix"> <img src="https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/Toys%20for%20dogs.jpg" alt="Dog playing with a puzzle toy" class="float-image-left">
                     <h3>3. Indoor Enrichment: Beating the Boredom</h3>
