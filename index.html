@@ -74,16 +74,35 @@
         }
 
         /* --- Custom SwiperJS Styles --- */
-        .service-swiper {
-            padding-bottom: 50px; /* Add space for pagination */
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #10B981; /* Emerald green color */
-        }
-        .swiper-pagination-bullet-active {
-            background-color: #10B981 !important;
-        }
+        /* --- Custom SwiperJS Styles --- */
+.service-swiper {
+    padding-bottom: 50px; /* Add space for pagination */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: static; /* This is the key change to make them sit beside the title */
+    height: auto;
+    width: auto;
+    margin: 0;
+    color: #6b7280; /* A neutral gray color */
+    transition: color 0.2s ease-in-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #10B981; /* Your emerald green for the hover effect */
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.5rem; /* Makes the arrow icon a nice size */
+    font-weight: 600;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #10B981 !important;
+}
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
