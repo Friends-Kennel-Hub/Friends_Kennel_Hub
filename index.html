@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Friends' Kennel Hub - Get the best quality dogs and services </title>
+    <title>Friends' Kennel Hub - Get the best quality dogs and services </title>
     <meta name="description" content="Friends' Kennel Hub offers expert dog boarding, training, breeding, and adoption services. Find your perfect companion and get the best care for your pet.">
     <meta name="keywords" content="dog adoption, pet boarding, dog training, pet adoption, vet consultation, dog breeding, puppies for sale, Friends' Kennel Hub, Tumkur">
-
     
     <link rel="icon" href="https://placehold.co/32x32/34D399/ffffff.png?text=Fk">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f9fafb;
             color: #1f2937;
         }
-
         .fun-fact-font {
             font-family: 'Playfair Display', serif;
         }
-
         .card-container {
             position: relative;
             min-height: 520px;
             perspective: 1000px;
         }
-
         .card-front,
         .card-back {
             position: absolute;
@@ -38,20 +37,16 @@
             transition: transform 0.7s;
             backface-visibility: hidden;
         }
-
         .card-container.is-flipped .card-front {
             transform: rotateY(180deg);
         }
-
         .card-container.is-flipped .card-back {
             transform: rotateY(0deg);
         }
-
         .card-back {
             transform: rotateY(180deg);
             overflow-y: auto;
         }
-
         /* --- STYLES FOR UNIQUE BLOG FRAMES --- */
         .unique-blog-frame {
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
@@ -60,7 +55,6 @@
         .unique-blog-frame:hover {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
-
         /* --- STYLES FOR FAQ ACCORDION --- */
         .faq-answer {
             transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out;
@@ -68,7 +62,7 @@
             overflow: hidden;
         }
         .faq-item.open .faq-answer {
-            max-height: 300px; /* Adjust as needed for content length */
+            max-height: 300px;
             padding-top: 0.5rem;
             padding-bottom: 1rem;
         }
@@ -78,22 +72,34 @@
         .faq-item.open .faq-icon {
             transform: rotate(45deg);
         }
+
+        /* --- Custom SwiperJS Styles --- */
+        .service-swiper {
+            padding-bottom: 50px; /* Add space for pagination */
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #10B981; /* Emerald green color */
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #10B981 !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
     <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl">
-       <nav class="container mx-auto pl-0 pr-4 sm:pl-0 sm:pr-6 lg:pl-0 lg:pr-8 py-4 flex justify-between items-center">
-    <a href="index.html">
-        <img src="https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/Generated%20Image%20September%2020%2C%202025%20-%2011_59PM%20(1).png" class="h-[5.5rem]" alt="Friends' Kennel Hub Logo" />
-    </a>
-    <div class="hidden md:flex space-x-8">
-    <a href="about.html" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">About Us</a>
-    <a href="#services" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Services</a>
-    <a href="#breeds" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Breeds</a>
-    <a href="blog.html" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Blog</a>
-    <a href="#contact" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Contact</a>
-</div>
+        <nav class="container mx-auto pl-0 pr-4 sm:pl-0 sm:pr-6 lg:pl-0 lg:pr-8 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/Generated%20Image%20September%2020%2C%202025%20-%2011_59PM%20(1).png" class="h-[5.5rem]" alt="Friends' Kennel Hub Logo" />
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="about.html" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">About Us</a>
+                <a href="#services" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Services</a>
+                <a href="#breeds" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Breeds</a>
+                <a href="blog.html" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Blog</a>
+                <a href="#contact" class="text-lg text-gray-600 hover:text-emerald-600 font-medium transition-colors">Contact</a>
+            </div>
             <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-gray-900 focus:outline-none">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
@@ -103,7 +109,7 @@
                 <a href="about.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">About Us</a>
                 <a href="#services" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Services</a>
                 <a href="#breeds" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Breeds</a>
-                 <a href="blog.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Blog</a>
+                <a href="blog.html" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Blog</a>
                 <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors">Contact</a>
             </div>
         </div>
@@ -127,8 +133,15 @@
         <section id="services" class="py-20 sm:py-24">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Services</h2>
-              <div id="services-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Services will be dynamically inserted here -->
+                
+                <div class="swiper service-swiper">
+                    <div class="swiper-wrapper" id="services-list">
+                        </div>
+                    
+                    <div class="swiper-pagination"></div>
+        
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </section>
@@ -137,8 +150,7 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Available Breeds</h2>
                 <div id="breeds-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Breeds will be dynamically inserted here -->
-                </div>
+                    </div>
             </div>
         </section>
 
@@ -146,21 +158,18 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">From Our Blog</h2>
                 <div id="blog-posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Blog posts will be dynamically inserted here -->
-                </div>
+                    </div>
                 <div class="text-center mt-12">
                     <a href="blog.html" class="inline-block bg-emerald-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-700 transition-all">View All Posts</a>
                 </div>
             </div>
         </section>
 
-        <!-- === UPDATED FAQ SECTION === -->
         <section id="faq" class="py-20 sm:py-24 bg-white rounded-3xl mx-4 sm:mx-8">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
                 <div id="faq-container" class="max-w-3xl mx-auto space-y-4">
-                    <!-- FAQ items will be dynamically inserted here -->
-                </div>
+                    </div>
                 <div id="faq-controls" class="text-center mt-8">
                     <button id="faq-see-more" class="inline-block bg-emerald-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-700 transition-all">See More</button>
                 </div>
@@ -184,8 +193,7 @@
                                 <label for="service-inquiry" class="block text-sm font-medium text-gray-700 mb-1">Service <span class="text-red-500">*</span></label>
                                 <select id="service-inquiry" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200">
                                     <option value="" disabled selected>-- Select a Service --</option>
-                                    <!-- Service options will be dynamically inserted here -->
-                                </select>
+                                    </select>
                             </div>
                             <div>
                                 <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
@@ -209,7 +217,9 @@
         </div>
     </footer>
 
-   <script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -228,58 +238,33 @@
             { name: "Vet Consultation", description: "Access to on-site or virtual vet consultations for general health checks and advice, ensuring your pet stays healthy and happy.", icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>`},
             { name: "Pet Transportation", description: "Safe and reliable transportation for your pets, whether it's a trip to the vet or relocating to a new city.", icon: `<svg class="w-10 h-10 text-emerald-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`}
         ];
-        const breedsData = {
-            "Labrador": { "image": "Labrador%20new.jpg", "Major Trait": "Friendly & Active", "Lifespan": "10-13 years", "Height": "21-24 in", "Weight": "55-80 lbs", "Care Needs": "Needs daily exercise and regular grooming.", "Fun Facts": "Their 'soft mouth' allows them to carry things gently." },
-            "Great Dane": { "image": "Great%20Dane%20new.jpg", "Major Trait": "Gentle Giant", "Lifespan": "7-10 years", "Height": "28-32 in", "Weight": "110-175 lbs", "Care Needs": "Monitor for bloat; needs joint support.", "Fun Facts": "Despite the name, this breed is German, not Danish." },
-            "Shih Tzu": { "image": "Shih%20tzu%20new.jpg", "Major Trait": "Affectionate Lapdog", "Lifespan": "10-16 years", "Height": "8-11 in", "Weight": "9-16 lbs", "Care Needs": "Daily grooming and regular eye cleaning are essential.", "Fun Facts": "Their name means 'little lion' in Chinese." },
-            "Golden Retriever": { "image": "Golden%20retriver.jpg", "Major Trait": "Intelligent & Gentle", "Lifespan": "10-12 years", "Height": "21-24 in", "Weight": "55-75 lbs", "Care Needs": "High energy; requires daily walks and playtime.", "Fun Facts": "Descended from a single dog in 1860s Scotland." },
-            "Doberman": { "image": "doberman%20new.jpg", "Major Trait": "Loyal & Fearless", "Lifespan": "10-13 years", "Height": "24-28 in", "Weight": "60-100 lbs", "Care Needs": "Requires strong leadership and socialization.", "Fun Facts": "They were called 'Devil Dogs' in WWII for their bravery." },
-            "Husky": { "image": "hisky%20new.jpg", "Major Trait": "Energetic & Independent", "Lifespan": "12-15 years", "Height": "20-23 in", "Weight": "35-60 lbs", "Care Needs": "Not for hot climates; loves to run.", "Fun Facts": "Famous for the 1925 Alaskan serum run." },
-            "Chow Chow": { "image": "Chow%20Chow%20new.jpg", "Major Trait": "Dignified & Reserved", "Lifespan": "8-12 years", "Height": "17-20 in", "Weight": "45-70 lbs", "Care Needs": "Can be stubborn; needs early socialization.", "Fun Facts": "One of two breeds with a blue-black tongue." },
-            "Poodle": { "image": "Poodle%20new.jpg", "Major Trait": "Highly Intelligent", "Lifespan": "12-15 years", "Height": "10-24 in", "Weight": "4-70 lbs", "Care Needs": "Coat requires professional grooming.", "Fun Facts": "Their haircut was designed for swimming protection." },
-            "Pomeranian": { "image": "pomerinarian%20new.jpg", "Major Trait": "Lively & Bold", "Lifespan": "12-16 years", "Height": "6-7 in", "Weight": "3-7 lbs", "Care Needs": "Prone to dental issues; requires regular brushing.", "Fun Facts": "Popularized by Queen Victoria." },
-            "German Shepherd": { "image": "German-shepherd%20new.jpg", "Major Trait": "Confident & Courageous", "Lifespan": "9-13 years", "Height": "22-26 in", "Weight": "50-90 lbs", "Care Needs": "Prone to hip dysplasia; needs training.", "Fun Facts": "First guide dogs for the blind were German Shepherds." },
-            "Beagle": { "image": "Beagle%20new.jpg", "Major Trait": "Curious & Merry", "Lifespan": "10-15 years", "Height": "13-15 in", "Weight": "20-30 lbs", "Care Needs": "Follows scents; needs a secure yard.", "Fun Facts": "Their name may mean 'gaping throat' in French." },
-            "Saint Bernard": { "image": "Saint-bernard%20new.jpg", "Major Trait": "Patient & Calm", "Lifespan": "8-10 years", "Height": "26-30 in", "Weight": "120-180 lbs", "Care Needs": "Drools a lot and sheds heavily.", "Fun Facts": "Famous for rescuing travelers in the Alps." }
-        };
-        const blogData = [
-            { title: "Monsoon Care for Pups", summary: "A guide to keeping your dog safe, healthy, and happy during the rainy season.", image: "https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/resizecom_elisa-kennemer-0TdrHK0po7I-unsplash.jpg", link: "blog-post-1.html" },
-            { title: "The Ultimate New Puppy Checklist", summary: "Everything you need to prepare for your new furry family member's arrival.", image: "https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/resizecom_april-walker-KBATu7tuP9U-unsplash.jpg ", link: "blog-post-2.html" },
-            { title: "Solving Separation Anxiety", summary: "Tips and tricks to help your dog feel more comfortable when they're home alone.", image: "https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/resizecom_greg-johnson-9KH00Tzmrfs-unsplash.jpg", link: "blog-post-3.html" }
-        ];
-        const faqData = [
-            { question: "What vaccinations should my puppy have before coming home?", answer: "Puppies typically start core vaccinations at 6-8 weeks, with boosters every 2-4 weeks until 16+ weeks of age. Core vaccines include distemper, hepatitis/adenovirus, parvovirus, and rabies. A veterinary health certificate should accompany your puppy." },
-            { question: "When should my puppy be spayed/neutered?", answer: "Timing depends on breed size: small breeds at 5-6 months, medium breeds at 6-9 months, large breeds at 12-15 months, and giant breeds at 15-18 months. Early spaying/neutering in large breeds may increase risks of certain health issues." },
-            { question: "Should my puppy be microchipped?", answer: "Yes, microchipping is highly recommended for permanent identification. The procedure is safe and typically done at 6-8 weeks of age. Cost ranges from ₹1,000-2,000 in India." },
-            { question: "How do I know if my puppy is healthy?", answer: "A healthy puppy should be active, alert, with clear eyes and nose, clean ears, and a good appetite. Schedule a veterinary examination within 3 days of bringing them home." },
-            { question: "How often should I take my dog to the veterinarian?", answer: "Puppies need visits every 3-4 weeks until 16 weeks old. Adult dogs should have annual wellness exams, while senior dogs (7+ years) benefit from bi-annual checkups." },
-            { question: "What are the signs of a medical emergency in dogs?", answer: "Seek immediate veterinary care for difficulty breathing, bloating, seizures, loss of consciousness, severe vomiting or diarrhea, inability to urinate, or suspected poisoning." },
-            { question: "What should I feed my puppy?", answer: "Feed high-quality puppy food appropriate for your dog's expected adult size. Gradually transition over 7-10 days if changing brands. Choose foods with high-quality protein sources." },
-            { question: "How often should I feed my dog?", answer: "Puppies 8-12 weeks need 4 meals daily, 3-6 months need 3 meals daily, and dogs over 6 months can eat twice daily. Adult dogs do well with two meals per day." },
-            { question: "What foods are toxic to dogs?", answer: "Never give dogs chocolate, grapes, raisins, onions, garlic, xylitol (artificial sweetener), avocado, alcohol, caffeine, or macadamia nuts. Also avoid cooked bones." },
-            { question: "How much water should my dog drink?", answer: "Dogs need approximately 1 ounce of water per pound of body weight daily. A 50-pound dog should drink about 6+ cups of water daily. Always provide fresh, clean water." },
-            { question: "When should I start socializing my puppy?", answer: "The critical socialization period is 3-12 weeks. Start controlled socialization immediately but avoid high-risk areas until vaccinations are complete." },
-            { question: "When should I start training my puppy?", answer: "Training can begin as early as 7-8 weeks. Puppy socialization classes are essential. Early training establishes good habits and prevents behavioral problems." },
-            { question: "How much exercise does my puppy need?", answer: "The general rule is 5 minutes of exercise per month of age, twice daily for puppies. Avoid excessive exercise like long runs until growth plates close (12-18 months)." },
-            { question: "How do I keep my dog safe during festivals and fireworks?", answer: "Create a safe space away from noise, use calming products like thundershirts, maintain normal routines, and consider desensitization training before events. Never punish fearful behavior." },
-            { question: "Can I give my dog human food?", answer: "Some human foods are safe in moderation: plain cooked chicken, rice, carrots, green beans, and pumpkin. However, their primary diet should be high-quality commercial dog food." },
-            { question: "Should I give my dog supplements?", answer: "Most dogs on a high-quality diet don't need them. Joint supplements can help older dogs. Always consult your vet before adding any supplements to their diet." },
-            { question: "Why does my dog chew everything?", answer: "Chewing is natural, especially for teething puppies. Provide appropriate chew toys. In adult dogs, it can indicate boredom or anxiety, which can be helped with more exercise and puzzle toys." },
-            { question: "How often should I bathe my dog?", answer: "Most dogs need baths every 4-6 weeks. Over-bathing can strip natural oils. Use dog-specific shampoos, never human products." },
-            { question: "Is it true that dogs age 7 years for every human year?", answer: "This is a myth. Dogs age rapidly in their first two years, then about 4-5 years per calendar year depending on size. Large breeds age faster than small breeds." },
-            { question: "Do dogs need grain-free diets?", answer: "Not usually, unless they have a specific grain allergy, which is rare. Grains provide valuable nutrients. Consult your vet before making significant dietary changes." }
-        ];
+        const breedsData = { "Labrador": { "image": "Labrador%20new.jpg", "Major Trait": "Friendly & Active", "Lifespan": "10-13 years", "Height": "21-24 in", "Weight": "55-80 lbs", "Care Needs": "Needs daily exercise and regular grooming.", "Fun Facts": "Their 'soft mouth' allows them to carry things gently." }, "Great Dane": { "image": "Great%20Dane%20new.jpg", "Major Trait": "Gentle Giant", "Lifespan": "7-10 years", "Height": "28-32 in", "Weight": "110-175 lbs", "Care Needs": "Monitor for bloat; needs joint support.", "Fun Facts": "Despite the name, this breed is German, not Danish." }, "Shih Tzu": { "image": "Shih%20tzu%20new.jpg", "Major Trait": "Affectionate Lapdog", "Lifespan": "10-16 years", "Height": "8-11 in", "Weight": "9-16 lbs", "Care Needs": "Daily grooming and regular eye cleaning are essential.", "Fun Facts": "Their name means 'little lion' in Chinese." }, "Golden Retriever": { "image": "Golden%20retriver.jpg", "Major Trait": "Intelligent & Gentle", "Lifespan": "10-12 years", "Height": "21-24 in", "Weight": "55-75 lbs", "Care Needs": "High energy; requires daily walks and playtime.", "Fun Facts": "Descended from a single dog in 1860s Scotland." }, "Doberman": { "image": "doberman%20new.jpg", "Major Trait": "Loyal & Fearless", "Lifespan": "10-13 years", "Height": "24-28 in", "Weight": "60-100 lbs", "Care Needs": "Requires strong leadership and socialization.", "Fun Facts": "They were called 'Devil Dogs' in WWII for their bravery." }, "Husky": { "image": "hisky%20new.jpg", "Major Trait": "Energetic & Independent", "Lifespan": "12-15 years", "Height": "20-23 in", "Weight": "35-60 lbs", "Care Needs": "Not for hot climates; loves to run.", "Fun Facts": "Famous for the 1925 Alaskan serum run." }, "Chow Chow": { "image": "Chow%20Chow%20new.jpg", "Major Trait": "Dignified & Reserved", "Lifespan": "8-12 years", "Height": "17-20 in", "Weight": "45-70 lbs", "Care Needs": "Can be stubborn; needs early socialization.", "Fun Facts": "One of two breeds with a blue-black tongue." }, "Poodle": { "image": "Poodle%20new.jpg", "Major Trait": "Highly Intelligent", "Lifespan": "12-15 years", "Height": "10-24 in", "Weight": "4-70 lbs", "Care Needs": "Coat requires professional grooming.", "Fun Facts": "Their haircut was designed for swimming protection." }, "Pomeranian": { "image": "pomerinarian%20new.jpg", "Major Trait": "Lively & Bold", "Lifespan": "12-16 years", "Height": "6-7 in", "Weight": "3-7 lbs", "Care Needs": "Prone to dental issues; requires regular brushing.", "Fun Facts": "Popularized by Queen Victoria." }, "German Shepherd": { "image": "German-shepherd%20new.jpg", "Major Trait": "Confident & Courageous", "Lifespan": "9-13 years", "Height": "22-26 in", "Weight": "50-90 lbs", "Care Needs": "Prone to hip dysplasia; needs training.", "Fun Facts": "First guide dogs for the blind were German Shepherds." }, "Beagle": { "image": "Beagle%20new.jpg", "Major Trait": "Curious & Merry", "Lifespan": "10-15 years", "Height": "13-15 in", "Weight": "20-30 lbs", "Care Needs": "Follows scents; needs a secure yard.", "Fun Facts": "Their name may mean 'gaping throat' in French." }, "Saint Bernard": { "image": "Saint-bernard%20new.jpg", "Major Trait": "Patient & Calm", "Lifespan": "8-10 years", "Height": "26-30 in", "Weight": "120-180 lbs", "Care Needs": "Drools a lot and sheds heavily.", "Fun Facts": "Famous for rescuing travelers in the Alps." } };
+        const blogData = [ { title: "Monsoon Care for Pups", summary: "A guide to keeping your dog safe, healthy, and happy during the rainy season.", image: "https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/resizecom_elisa-kennemer-0TdrHK0po7I-unsplash.jpg", link: "blog-post-1.html" }, { title: "The Ultimate New Puppy Checklist", summary: "Everything you need to prepare for your new furry family member's arrival.", image: "https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/resizecom_april-walker-KBATu7tuP9U-unsplash.jpg ", link: "blog-post-2.html" }, { title: "Solving Separation Anxiety", summary: "Tips and tricks to help your dog feel more comfortable when they're home alone.", image: "https://github.com/Friends-Kennel-Hub/Friends_Kennel_Hub/raw/main/resizecom_greg-johnson-9KH00Tzmrfs-unsplash.jpg", link: "blog-post-3.html" } ];
+        const faqData = [ { question: "What vaccinations should my puppy have before coming home?", answer: "Puppies typically start core vaccinations at 6-8 weeks, with boosters every 2-4 weeks until 16+ weeks of age. Core vaccines include distemper, hepatitis/adenovirus, parvovirus, and rabies. A veterinary health certificate should accompany your puppy." }, { question: "When should my puppy be spayed/neutered?", answer: "Timing depends on breed size: small breeds at 5-6 months, medium breeds at 6-9 months, large breeds at 12-15 months, and giant breeds at 15-18 months. Early spaying/neutering in large breeds may increase risks of certain health issues." }, { question: "Should my puppy be microchipped?", answer: "Yes, microchipping is highly recommended for permanent identification. The procedure is safe and typically done at 6-8 weeks of age. Cost ranges from ₹1,000-2,000 in India." }, { question: "How do I know if my puppy is healthy?", answer: "A healthy puppy should be active, alert, with clear eyes and nose, clean ears, and a good appetite. Schedule a veterinary examination within 3 days of bringing them home." }, { question: "How often should I take my dog to the veterinarian?", answer: "Puppies need visits every 3-4 weeks until 16 weeks old. Adult dogs should have annual wellness exams, while senior dogs (7+ years) benefit from bi-annual checkups." }, { question: "What are the signs of a medical emergency in dogs?", answer: "Seek immediate veterinary care for difficulty breathing, bloating, seizures, loss of consciousness, severe vomiting or diarrhea, inability to urinate, or suspected poisoning." }, { question: "What should I feed my puppy?", answer: "Feed high-quality puppy food appropriate for your dog's expected adult size. Gradually transition over 7-10 days if changing brands. Choose foods with high-quality protein sources." }, { question: "How often should I feed my dog?", answer: "Puppies 8-12 weeks need 4 meals daily, 3-6 months need 3 meals daily, and dogs over 6 months can eat twice daily. Adult dogs do well with two meals per day." }, { question: "What foods are toxic to dogs?", answer: "Never give dogs chocolate, grapes, raisins, onions, garlic, xylitol (artificial sweetener), avocado, alcohol, caffeine, or macadamia nuts. Also avoid cooked bones." }, { question: "How much water should my dog drink?", answer: "Dogs need approximately 1 ounce of water per pound of body weight daily. A 50-pound dog should drink about 6+ cups of water daily. Always provide fresh, clean water." }, { question: "When should I start socializing my puppy?", answer: "The critical socialization period is 3-12 weeks. Start controlled socialization immediately but avoid high-risk areas until vaccinations are complete." }, { question: "When should I start training my puppy?", answer: "Training can begin as early as 7-8 weeks. Puppy socialization classes are essential. Early training establishes good habits and prevents behavioral problems." }, { question: "How much exercise does my puppy need?", answer: "The general rule is 5 minutes of exercise per month of age, twice daily for puppies. Avoid excessive exercise like long runs until growth plates close (12-18 months)." }, { question: "How do I keep my dog safe during festivals and fireworks?", answer: "Create a safe space away from noise, use calming products like thundershirts, maintain normal routines, and consider desensitization training before events. Never punish fearful behavior." }, { question: "Can I give my dog human food?", answer: "Some human foods are safe in moderation: plain cooked chicken, rice, carrots, green beans, and pumpkin. However, their primary diet should be high-quality commercial dog food." }, { question: "Should I give my dog supplements?", answer: "Most dogs on a high-quality diet don't need them. Joint supplements can help older dogs. Always consult your vet before adding any supplements to their diet." }, { question: "Why does my dog chew everything?", answer: "Chewing is natural, especially for teething puppies. Provide appropriate chew toys. In adult dogs, it can indicate boredom or anxiety, which can be helped with more exercise and puzzle toys." }, { question: "How often should I bathe my dog?", answer: "Most dogs need baths every 4-6 weeks. Over-bathing can strip natural oils. Use dog-specific shampoos, never human products." }, { question: "Is it true that dogs age 7 years for every human year?", answer: "This is a myth. Dogs age rapidly in their first two years, then about 4-5 years per calendar year depending on size. Large breeds age faster than small breeds." }, { question: "Do dogs need grain-free diets?", answer: "Not usually, unless they have a specific grain allergy, which is rare. Grains provide valuable nutrients. Consult your vet before making significant dietary changes." } ];
 
         // --- RENDER FUNCTIONS ---
+        // === UPDATED renderServices FOR CAROUSEL ===
         function renderServices() {
             const container = document.getElementById('services-list');
             const dropdown = document.getElementById('service-inquiry');
+
             if (container && dropdown) {
+                container.innerHTML = ''; // Clear existing content
+                dropdown.innerHTML = '<option value="" disabled selected>-- Select a Service --</option>'; // Reset dropdown
+
                 servicesData.forEach(service => {
-                    const card = document.createElement('div');
-                    card.className = 'bg-white p-8 rounded-3xl shadow-lg transition-transform transform hover:scale-105';
-                    card.innerHTML = `${service.icon}<h3 class="text-xl font-semibold mb-2">${service.name}</h3><p class="text-gray-600">${service.description}</p>`;
-                    container.appendChild(card);
+                    // Create the slide element
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide bg-white p-8 rounded-3xl shadow-lg flex flex-col h-auto';
+                    
+                    slide.innerHTML = `
+                        ${service.icon}
+                        <h3 class="text-xl font-semibold mb-2">${service.name}</h3>
+                        <p class="text-gray-600">${service.description}</p>
+                    `;
+                    container.appendChild(slide);
+
+                    // Add service to the contact form dropdown
                     const option = document.createElement('option');
                     option.value = service.name;
                     option.textContent = service.name;
@@ -291,33 +276,29 @@
         function renderBreeds() {
             const container = document.getElementById('breeds-container');
             if (container) {
+                container.innerHTML = '';
                 Object.entries(breedsData).forEach(([breedName, data]) => {
                     const card = document.createElement('div');
                     card.className = 'card-container w-full';
                     card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+                    
                     const front = document.createElement('div');
                     front.className = 'card-front p-6 bg-gray-100 rounded-3xl shadow-lg flex flex-col items-center justify-between';
-                    const imgFront = document.createElement('img');
-                    imgFront.src = `https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}`;
-                    imgFront.alt = breedName;
-                    imgFront.className = 'w-full h-64 object-cover rounded-2xl mb-4';
-                    const title = document.createElement('h3');
-                    title.className = 'text-2xl font-semibold text-gray-800 text-center mb-3';
-                    title.textContent = breedName;
-                    const specsList = document.createElement('ul');
-                    specsList.className = 'text-gray-600 space-y-1 text-left text-sm w-full px-4';
-                    ['Major Trait', 'Lifespan', 'Height', 'Weight', 'Care Needs'].forEach(key => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<strong>${key}:</strong> ${data[key]}`;
-                        specsList.appendChild(li);
-                    });
-                    front.append(imgFront, title, specsList);
+                    front.innerHTML = `
+                        <img src="https://github.com/gouravraina348-prog/Friends_Kennel_Hub/raw/main/${data.image}" alt="${breedName}" class="w-full h-64 object-cover rounded-2xl mb-4">
+                        <h3 class="text-2xl font-semibold text-gray-800 text-center mb-3">${breedName}</h3>
+                        <ul class="text-gray-600 space-y-1 text-left text-sm w-full px-4">
+                            <li><strong>Major Trait:</strong> ${data["Major Trait"]}</li>
+                            <li><strong>Lifespan:</strong> ${data.Lifespan}</li>
+                            <li><strong>Height:</strong> ${data.Height}</li>
+                            <li><strong>Weight:</strong> ${data.Weight}</li>
+                            <li><strong>Care Needs:</strong> ${data["Care Needs"]}</li>
+                        </ul>`;
+                    
                     const back = document.createElement('div');
                     back.className = 'card-back p-6 bg-emerald-500 rounded-3xl shadow-lg flex flex-col justify-center items-center text-center';
-                    const funFact = document.createElement('p');
-                    funFact.className = 'text-lg italic leading-relaxed text-white fun-fact-font';
-                    funFact.textContent = data["Fun Facts"];
-                    back.append(funFact);
+                    back.innerHTML = `<p class="text-lg italic leading-relaxed text-white fun-fact-font">${data["Fun Facts"]}</p>`;
+                    
                     card.append(front, back);
                     container.appendChild(card);
                 });
@@ -340,8 +321,7 @@
                                 <p class="text-gray-600 text-sm mb-4">${post.summary}</p>
                                 <span class="font-semibold text-emerald-600">Read More &rarr;</span>
                             </div>
-                        </a>
-                    `;
+                        </a>`;
                     container.appendChild(postEl);
                 });
             }
@@ -358,19 +338,14 @@
                 const faqItem = document.createElement('div');
                 faqItem.className = 'faq-item border-b border-gray-200';
                 
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'faq-question flex justify-between items-center cursor-pointer py-4';
-                questionDiv.innerHTML = `
-                    <h3 class="font-semibold text-lg text-gray-800 text-left">${item.question}</h3>
-                    <span class="faq-icon text-emerald-500 font-bold text-2xl transform transition-transform duration-300">+</span>
-                `;
-                
-                const answerDiv = document.createElement('div');
-                answerDiv.className = 'faq-answer px-2 text-gray-600 text-left';
-                answerDiv.innerHTML = `<p>${item.answer}</p>`;
-                
-                faqItem.appendChild(questionDiv);
-                faqItem.appendChild(answerDiv);
+                faqItem.innerHTML = `
+                    <div class="faq-question flex justify-between items-center cursor-pointer py-4">
+                        <h3 class="font-semibold text-lg text-gray-800 text-left">${item.question}</h3>
+                        <span class="faq-icon text-emerald-500 font-bold text-2xl transform transition-transform duration-300">+</span>
+                    </div>
+                    <div class="faq-answer px-2 text-gray-600 text-left">
+                        <p>${item.answer}</p>
+                    </div>`;
                 container.appendChild(faqItem);
             });
 
@@ -389,12 +364,11 @@
             const whatsappButton = document.getElementById('whatsapp-button');
             const statusMessage = document.getElementById('status-message');
             if (emailButton && whatsappButton) {
-                const getFormData = () => {
-                    const name = document.getElementById('name').value.trim();
-                    const service = document.getElementById('service-inquiry').value;
-                    const message = document.getElementById('message').value.trim();
-                    return { name, service, message };
-                };
+                const getFormData = () => ({
+                    name: document.getElementById('name').value.trim(),
+                    service: document.getElementById('service-inquiry').value,
+                    message: document.getElementById('message').value.trim()
+                });
                 const validateForm = (data) => {
                     if (!data.service) {
                         statusMessage.textContent = 'Please select a service.';
@@ -417,7 +391,7 @@
                     let text = `Hello! I'm inquiring about your "${data.service}" service.`;
                     if (data.name) text += ` My name is ${data.name}.`;
                     if (data.message) text += `\n\nMy message: ${data.message}`;
-                    const whatsappLink = `https://wa.me/1234567890?text=${encodeURIComponent(text)}`;
+                    const whatsappLink = `https://wa.me/911234567890?text=${encodeURIComponent(text)}`; // Example Indian number
                     window.open(whatsappLink, '_blank');
                 });
             }
@@ -429,16 +403,13 @@
                 faqContainer.addEventListener('click', (e) => {
                     const question = e.target.closest('.faq-question');
                     if (question) {
-                        const faqItem = question.parentElement;
-                        faqItem.classList.toggle('open');
+                        question.parentElement.classList.toggle('open');
                     }
                 });
             }
             const seeMoreButton = document.getElementById('faq-see-more');
             if (seeMoreButton) {
-                seeMoreButton.addEventListener('click', () => {
-                    renderFAQ(true);
-                });
+                seeMoreButton.addEventListener('click', () => renderFAQ(true));
             }
         }
 
@@ -450,11 +421,33 @@
         handleContactForm();
         handleFAQInteractions();
     });
-</script>
+    </script>
+    
+    <script>
+        const swiper = new Swiper('.service-swiper', {
+            spaceBetween: 30,
+            loop: true,
+            slidesPerView: 1,
+            breakpoints: {
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 30
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 40
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
 </body>
 </html>
-
-
-
-</html>
-
